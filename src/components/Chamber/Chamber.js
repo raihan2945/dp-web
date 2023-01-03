@@ -11,10 +11,10 @@ const Chamber = ({ data }) => {
               return (
                 <div class="col-sm-6" style={{ marginBottom: "1rem" }}>
                   <div
-                    style={{ borderRadius: "5px", height: "100%" }}
-                    className="rounded-lg border border-[#F0F0F2] py-3 px-3 md:mb-0 md:py-[1.4375rem] md:px-5"
+                    style={{ borderRadius: "5px", height: "100%", border:"1px solid #F0F0F2" }}
+                    className="rounded-lg py-3 px-3 md:mb-0 md:py-[1.4375rem] md:px-5"
                   >
-                    <div style={{ display: "flex", gap: ".5rem" }}>
+                    <div style={{ display: "flex", gap: "1.5rem" }}>
                       <div className="mr-2 mb-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-[5px] bg-[#EAEEF9] sm:mr-5 sm:h-11 sm:w-11">
                         <span>
                           <svg
@@ -48,23 +48,24 @@ const Chamber = ({ data }) => {
                         <div
                           style={{
                             display: "flex",
-                            alignItems: "start",
+                            alignItems: "center",
                             gap: ".5rem",
+                            padding:".5rem 0rem"
                           }}
                         >
                           <i
-                            style={{ marginTop: "6px", color: "#919399" }}
+                            style={{ color: "#919399" }}
                             class="fas fa-map-marker-alt"
                           ></i>
-                          <p className="address">{item.Address}</p>
+                          <p className="address" style={{fontSize:".8rem", margin:"0"}}>{item.Address}</p>
                         </div>
                         <div>
-                          <span style={{ color: "#A3A3AA" }}>
+                          <span style={{ color: "#A3A3AA", fontSize:".8rem" }}>
                             Available days :
                           </span>{" "}
                           {item?.AvailableDays.map((day, index) => {
                             return (
-                              <span>
+                              <span style={{fontSize:".8rem"}}>
                                 {index == 0 ? "" : ", "}
                                 {day}
                               </span>
@@ -72,24 +73,25 @@ const Chamber = ({ data }) => {
                           })}
                         </div>
                         <div>
-                          <span style={{ color: "#A3A3AA" }}>
+                          <span style={{ color: "#A3A3AA", fontSize:".8rem"}}>
                             Available time :
                           </span>{" "}
-                          {item.AvailableTime}
+                          <span style={{fontSize:".8rem"}}>{item.AvailableTime}</span>
                         </div>
                         <div
                           style={{
                             display: "flex",
                             gap: ".5rem",
                             marginTop: ".8rem",
+                            alignItems:'center'
                           }}
                         >
-                          <div>
+                          <div style={{backgroundColor:"#F7F7F7", padding:".5rem", borderRadius:"5px", height:"35px", width:"35px", display:'flex', alignItems:"center", justifyContent:"center"}}>
                             <i class="fas fa-phone-alt"></i>
                           </div>
                           <div style={{}}>
-                            <p style={{ margin: "0" }}>Chamber phone number</p>
-                            <p style={{ margin: "0" }}>
+                            <p style={{ margin: "0", fontSize:".8rem", color:"#919399" }}>Chamber phone number</p>
+                            <p style={{ margin: "0", fontSize:".8rem" }}>
                               {item.AppointmentNumber}
                             </p>
                           </div>

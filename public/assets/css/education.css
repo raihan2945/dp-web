@@ -15,7 +15,7 @@
     font-weight: 600;
 }
 #eduction .institute{
-    font-size: 1rem;
+    font-size: .8rem;
     font-weight: 400;
 }
 
@@ -36,7 +36,7 @@
     font-weight: 600;
 }
 #training .institute{
-    font-size: 1rem;
+    font-size: .8rem;
     font-weight: 400;
     color: #5C5F66;
 }
@@ -56,7 +56,7 @@
     font-weight: 600;
 }
 #research-paper .institute{
-    font-size: 1rem;
+    font-size: .8rem;
     font-weight: 400;
     color: #5C5F66;
 }

@@ -12,10 +12,10 @@ const EducationAndTarining = ({ data }) => {
               return (
                 <div class="col-sm-6" style={{ marginBottom: "1rem" }}>
                   <div
-                    style={{ borderRadius: "5px", height:"100%"}}
-                    className="rounded-lg border border-[#F0F0F2] py-3 px-3 md:mb-0 md:py-[1.4375rem] md:px-5"
+                    style={{ borderRadius: "5px", height:"100%", border:"1px solid #F0F0F2"}}
+                    className="rounded-lg py-3 px-3 md:mb-0 md:py-[1.4375rem] md:px-5"
                   >
-                    <div style={{ display: "flex", gap: ".5rem" }}>
+                    <div style={{ display: "flex", gap: "1.5rem" }}>
                       <div className="mr-3 flex h-15 w-15 flex-shrink-0 items-center justify-center rounded-[5px] bg-[#EAEEF9] sm:mr-5 sm:h-11 sm:w-11">
                         <span>
                           <svg
@@ -66,21 +66,23 @@ const EducationAndTarining = ({ data }) => {
                           style={{ display: "flex", gap: "5px" }}
                         >
                           <span
-                            className="mt-1 font-normal text-xs"
+                            className="mt-1 font-sm text-xs"
                             style={{
-                              border: "1px solid #C4C6CC",
+                              border: "1px solid #E5E7EB",
                               padding: "1px 6px",
                               borderRadius: "3px",
+                              fontSize:".8rem"
                             }}
                           >
                            {item.Country}
                           </span>
                           <span
-                            className="mt-1 font-normal text-xs"
+                            className="mt-1 font-sm text-xs"
                             style={{
-                              border: "1px solid #C4C6CC",
+                              border: "1px solid #E5E7EB",
                               padding: "1px 6px",
                               borderRadius: "3px",
+                              fontSize:".8rem"
                             }}
                           >
                           {item.Year}
@@ -102,10 +104,10 @@ const EducationAndTarining = ({ data }) => {
                 return(
                     <div class="col-sm-6" style={{ marginBottom: "1rem", }}>
                     <div
-                      style={{ borderRadius: "5px",height:"100%" }}
+                      style={{ borderRadius: "5px",height:"100%", border:"1px solid #F0F0F2" }}
                       className="rounded-lg border border-[#F0F0F2] py-3 px-3 md:mb-0 md:py-[1.4375rem] md:px-5"
                     >
-                      <div style={{ display: "flex", gap: ".5rem",  }}>
+                      <div style={{ display: "flex", gap: "1.5rem",  }}>
                         <div className="mr-3 flex h-15 w-15 flex-shrink-0 items-center justify-center rounded-[5px] bg-[#EAEEF9] sm:mr-5 sm:h-11 sm:w-11">
                           <span>
                             <svg
@@ -140,9 +142,10 @@ const EducationAndTarining = ({ data }) => {
                             <span
                               className="mt-1 font-normal text-xs"
                               style={{
-                                border: "1px solid #C4C6CC",
+                                border: "1px solid #F0F0F2",
                                 padding: "1px 6px",
                                 borderRadius: "3px",
+                                fontSize:".8rem"
                               }}
                             >
                              {item.StartDate} - {item.EndDate}
@@ -164,10 +167,10 @@ const EducationAndTarining = ({ data }) => {
             {data?.Researchs.map(item=>{
                 return (            <div class="col-sm-6" style={{ marginBottom: "1rem" }}>
                 <div
-                  style={{ borderRadius: "5px", height:"100%" }}
-                  className="rounded-lg border border-[#F0F0F2] py-3 px-3 md:mb-0 md:py-[1.4375rem] md:px-5"
+                  style={{ borderRadius: "5px", height:"100%", border:"1px solid #F0F0F2" }}
+                  className="rounded-lg py-3 px-3 md:mb-0 md:py-[1.4375rem] md:px-5"
                 >
-                  <div style={{ display: "flex", gap: ".5rem" }}>
+                  <div style={{ display: "flex", gap: "1.5rem" }}>
                     <div className="mr-3 flex h-15 w-15 flex-shrink-0 items-center justify-center rounded-[5px] bg-[#EAEEF9] sm:mr-5 sm:h-11 sm:w-11">
                       <span>
                         <svg
@@ -206,7 +209,7 @@ const EducationAndTarining = ({ data }) => {
                       {item.Title}
                       </p>
                       <div className="date" style={{ display: "flex" }}>
-                        <span className="mt-1 font-normal text-xs">
+                        <span className="mt-1 font-normal text-xs" style={{fontSize:".8rem"}}>
                           {item.PublishingDate}
                         </span>
                       </div>

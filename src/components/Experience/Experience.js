@@ -11,10 +11,10 @@ const Experience = ({data}) => {
                 return(
                     <div class="col-sm-6" style={{ marginBottom: "1rem" }}>
                     <div
-                      style={{ borderRadius: "5px" }}
-                      className="rounded-lg border border-[#F0F0F2] py-3 px-3 md:mb-0 md:py-[1.4375rem] md:px-5"
+                      style={{ borderRadius: "5px", border:'1px solid #F0F0F2'}}
+                      className="rounded-lg py-3 px-3 md:mb-0 md:py-[1.4375rem] md:px-5"
                     >
-                      <div style={{ display: "flex", gap: ".5rem" }}>
+                      <div style={{ display: "flex", gap: "1.5rem" }}>
                         <div className="mr-3 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-[5px] bg-[#EAEEF9] sm:mr-5 sm:h-11 sm:w-11">
                           <svg
                             width="24"
@@ -35,9 +35,9 @@ const Experience = ({data}) => {
                           <h6 className="designation">
                             {item.Designation}
                           </h6>
-                          <p className="institute">{item.Institution}</p>
+                          <p className="institute" style={{fontSize:".8rem"}}>{item.Institution}</p>
                           <div className="date-and-time" style={{}}>
-                            <span className="mt-1 font-normal text-xs" style={{}}>
+                            <span className="mt-1 font-normal text-xs" style={{fontSize:".8rem"}}>
                              {item.From} - {item.Current == true ? "Current" : item.To}
                             </span>
                           </div>

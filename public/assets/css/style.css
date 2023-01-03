@@ -1,19 +1,19 @@
-/**
-* Template Name: Arsha - v4.9.1
-* Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+@font-face {
+  font-family: "AxiformaBold";
+  src: local("AxiformaBold"),
+   url("/fonts/Axiforma-Bold.ttf") format("ttf");
+  font-weight: bold;
+  }
+
 
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-body {
-  /* font-family: "Open Sans", sans-serif; */
+/* body {
   color: #444444;
-  font-family: 'Roboto', sans-serif;
-  /* background-color: #F7F7F7; */
-}
+  font-family: 'AxiformaBold'; 
+   background-color: #F7F7F7;
+} */
 
 a {
   color: #47b2e4;
@@ -25,14 +25,7 @@ a:hover {
   text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Roboto', sans-serif;
-}
+
 
 /*--------------------------------------------------------------
 # Preloader

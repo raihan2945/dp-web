@@ -7,7 +7,7 @@ const AboutUs = ({data}) => {
       <div className="container">
         <div className=" about-doctor">
           <h1>About Myself</h1>
-          <div className="row">
+          <div className="row about-text">
             <div className="col-lg-6" data-aos="fade-left" data-aos-delay={100}>
               <p className="">
                 {data?.Bio}
