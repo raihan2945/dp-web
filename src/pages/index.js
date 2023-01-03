@@ -118,7 +118,7 @@ export default function Home() {
                       {/* ***** Menu Start ***** */}
                       <ul className="nav">
                         <li className="scroll-to-section">
-                          <a href="#about" className="active">
+                          <a href="#about">
                             About doctor
                           </a>
                         </li>
