@@ -10,3 +10,15 @@
     font-weight: 600;
     margin-bottom: 1rem;
 }
+
+
+
+@media (max-width: 991px) {
+    
+    #gallery-section{
+        background-color: white;
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+    
+  }

@@ -114,8 +114,45 @@ export default function Home() {
                 <div className="row">
                   <div className="col-12">
                     <nav className="main-nav" id="navbar-example2">
-                      {/* ***** Logo End ***** */}
-                      {/* ***** Menu Start ***** */}
+                      <div className="nav-bar">
+                        <input type="checkbox" id="nav-check" />
+                        <div className="nav-btn">
+                          <label htmlFor="nav-check">
+                            <span />
+                            <span />
+                            <span />
+                          </label>
+                        </div>
+                        <div className="nav-links">
+                        <a href="#about">
+                            About doctor
+                          </a>
+                          <a href="#education">Education</a>
+                          <a href="#experience">Experiences</a>
+                          <a href="#chamber">Chamber</a>
+                          <a href="#speciality">Speciality & Services</a>
+                          <a href="#gallery">Gallery</a>
+                          <a href="#gallery">Gallery</a>
+                          <a href="#video-gallery">Video Gallery</a>
+                          <a href="#contact">Contact Us</a>
+                        </div>
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </header>
+
+            {/* 
+            <header
+              className="header-area header-sticky wow slideInDown"
+              data-wow-duration="0.75s"
+              data-wow-delay="0s"
+            >
+              <div className="container">
+                <div className="row">
+                  <div className="col-12">
+                    <nav className="main-nav" id="navbar-example2">
                       <ul className="nav">
                         <li className="scroll-to-section">
                           <a href="#about">
@@ -147,23 +184,13 @@ export default function Home() {
                             <a href="#contact">Contact Us</a>
                           </div>
                         </li>
-                        {/* <li className="scroll-to-section">
-                  <div className="border-first-button">
-                    <a href="#contact">Blog</a>
-                  </div>
-                </li>
-                <li className="scroll-to-section">
-                  <div className="border-first-button">
-                    <a href="#contact">Contact</a>
-                  </div>
-                </li> */}
                       </ul>
-                      {/* ***** Menu End ***** */}
+                      <i class="fas fa-bars"></i>
                     </nav>
                   </div>
                 </div>
               </div>
-            </header>
+            </header> */}
             <div
               data-bs-spy="scroll"
               data-bs-target="#navbar-example2"

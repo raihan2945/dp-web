@@ -21,3 +21,15 @@
     line-height: 2rem;
     color: #2E2F33;
   }
+
+  @media (max-width: 991px) {
+    .about-doctor{
+      margin-top: 2rem;
+      background-color: white;
+      padding: 2rem;
+  }
+
+  .about-img{
+    display: none !important;
+  }
+  }

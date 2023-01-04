@@ -20,7 +20,7 @@ const AboutUs = ({data}) => {
             >
               <img
                 src="images/tranparent.svg"
-                className="img-fluid"
+                className="img-fluid about-img"
                 alt=""
                 style={{objectFit:'contain'}}
               />

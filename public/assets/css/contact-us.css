@@ -68,3 +68,27 @@
     background-color: white;
 }
 
+
+@media (max-width: 991px) {
+    
+    #contact{
+        background-color: white;
+        padding:0;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    
+    
+  }
+@media (max-width: 700px) {
+    
+    #contact .btn-container{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    
+  }
+

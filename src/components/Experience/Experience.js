@@ -9,7 +9,7 @@ const Experience = ({data}) => {
             <h1 className="col-12">Working Experience</h1>
             {data?.Experiences.map(item=>{
                 return(
-                    <div class="col-sm-6" style={{ marginBottom: "1rem" }}>
+                    <div class="col-lg-6" style={{ marginBottom: "1rem" }}>
                     <div
                       style={{ borderRadius: "5px", border:'1px solid #F0F0F2'}}
                       className="rounded-lg py-3 px-3 md:mb-0 md:py-[1.4375rem] md:px-5"

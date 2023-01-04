@@ -18,3 +18,13 @@
     font-size: .8rem;
     font-weight: 400;
 }
+
+
+@media (max-width: 991px) {
+    
+    #chamber-section{
+        background-color: white;
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+  }

@@ -60,3 +60,13 @@
     font-weight: 400;
     color: #5C5F66;
 }
+
+
+@media (max-width: 991px) {
+    
+    #eduction-secion{
+        background-color: white;
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+  }
