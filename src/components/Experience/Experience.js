@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 const Experience = ({data}) => {
   return (
@@ -41,7 +42,10 @@ const Experience = ({data}) => {
                           <p className="institute" style={{fontSize:".8rem"}}>{item.Institution}</p>
                           <div className="date-and-time" style={{}}>
                             <span className="mt-1 font-normal text-xs" style={{fontSize:".8rem"}}>
-                             {item.From} - {item.Current == true ? "Current" : item.To}
+                            {/* moment(testDate,'mm/dd/yyyy'); */}
+                             {/* {`${new Date(item?.From)}`} - {item.Current == true ? "Current" : item.To} */}
+                             {`${moment(new Date(item?.From)).format("MMMM DD YYYY")}`} - {item.Current == true ? "Current" : `${moment(new Date(item?.From)).format("MMMM DD YYYY")}`}
+                             {/* {item.From} - {item.Current == true ? "Current" : item.To} */}
                             </span>
                           </div>
                         </div>

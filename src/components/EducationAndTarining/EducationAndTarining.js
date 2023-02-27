@@ -99,6 +99,7 @@ const EducationAndTarining = ({ data }) => {
           </div>
         </div>
         {/* -----------------------Training----------------- */}
+        {data.Trainings && 
         <div className="training" id="training">
           <div class="row">
             <h1 className="col-12">Training</h1>
@@ -161,7 +162,9 @@ const EducationAndTarining = ({ data }) => {
             })}
           </div>
         </div>
+        }
         {/* -----------------------Research Paper----------------- */}
+        {data.Researchs &&
         <div className="research-paper" id="research-paper">
           <div class="row">
             <h1 className="col-12">Research Paper</h1>
@@ -229,6 +232,7 @@ const EducationAndTarining = ({ data }) => {
             })}
           </div>
         </div>
+        }
       </div>
     </div>
   );

@@ -229,10 +229,11 @@ export default function Home() {
                   <Personal data={allData} />
                 </section>
               }
-
+                 {allData?.Educations &&
               <section id="education" className="">
                 <EducationAndTarining data={allData} />
               </section>
+                }
               <section id="experience" className="experience">
                 <Experience data={allData} />
               </section>

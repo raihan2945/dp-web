@@ -22,25 +22,25 @@ const HeroSection = ({ data }) => {
             plus.
           </h2> */}
             <div className="speciality">
-              <p
+              <div
                 style={{
-                  fontSize: ".9rem",
-                  fontWeight: "400",
-                  marginBottom: "0",
+                  // fontSize: ".9rem",
+                  // fontWeight: "400",
+                  // marginBottom: "0",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: ".5rem",
                 }}
               >
-                <span style={{ color: "#FF9201" }}>
-                  {data?.Speciality}{" "}
-                  <i
-                    class="fas fa-circle"
-                    style={{ fontSize: ".3rem", color: "#919399" }}
-                  ></i>{" "}
-                </span>
-                <span>
-                  {" "}
+                <div style={{ color: "#FF9201" }}>{data?.Speciality}</div>
+                <i
+                  class="fas fa-circle"
+                  style={{ fontSize: ".3rem", color: "#919399" }}
+                ></i>
+                <div>
                   {Math.round(data?.YearsOfExperience)}+ years of experience
-                </span>
-              </p>
+                </div>
+              </div>
               <div
                 className="edu"
                 style={{
@@ -110,27 +110,15 @@ const HeroSection = ({ data }) => {
             </div>
 
             <div style={{ marginTop: "3rem" }} className="media_links">
-              <div className="icon-box">
-                <Link href="https://www.facebook.com/mosleh.uddin.969">
-                <i className="fab fa-facebook"></i>
-                </Link>
-              </div>
-              <div className="icon-box">
-                <Link href="">
-                <i class="fab fa-youtube"></i>
-                </Link>
-              </div>
-              <div className="icon-box">
-                <Link href="">
-                <i class="fab fa-twitter"></i>
-                </Link>
-              </div>
-              <div className="icon-box">
-                <Link href="">
-                <i class="fab fa-linkedin-in"></i>
-                </Link>
-              </div>
-              
+              {data?.MediaLinks.map((item) => {
+                return (
+                  <div className="icon-box">
+                    <a href={`https://${item.value}`}>
+                      <i className="fab fa-facebook"></i>
+                    </a>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <div
