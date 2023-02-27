@@ -151,7 +151,7 @@
   }
   #hero .hero-buttons .button1{
     border: none;
-    padding: 7px 15px;
+    padding: 15px 20px;
     background-color: #0032B7;
     color: white;
     font-weight: 500;
@@ -161,7 +161,7 @@
   
   #hero .hero-buttons .button2{
     border: 1px solid #C4C6CC;
-    padding: 7px 15px;
+    padding: 7px 20px;
     background-color:white;
     color: #2E2F33;
     font-weight: 500;
@@ -174,6 +174,21 @@
     color: #ffff;
 
   }
+
+  #hero .media_links{
+    display: flex;
+    gap: 1rem;
+  }
+
+ .icon-box{
+    /* font-size:"1.5rem" !important; */
+    /* background-color: #0032B7; */
+  }
+ .icon-box i{
+    font-size:1.2rem !important;
+  
+    /* background-color: #0032B7; */
+  }
   
   @media (max-width: 991px) {
     #hero {
@@ -182,6 +197,9 @@
       padding-top: 0;
     }
 
+    #hero .edu {
+       justify-content: center;
+    }
     
     #hero .container {
       padding-top: 12px;
@@ -209,6 +227,11 @@
   
     #hero .hero-img img {
       width: 50%;
+    }
+
+    #hero .media_links{
+      display: flex;
+      justify-content: center;
     }
   }
   

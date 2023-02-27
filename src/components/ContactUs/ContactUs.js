@@ -23,11 +23,11 @@ const ContactUs = ({data}) => {
               Products on online services or over the Internet.
             </p>
             <div className="btn-container">
-              <button style={{border:"none"}} href="" onClick={()=>setModalShow(true)} className="btn1">
+              <button style={{border:"none", borderRadius:"7px"}} href="" onClick={()=>setModalShow(true)} className="btn1">
                 Call for appointment
               </button>
-              <button style={{border:"none"}} href="" onClick={()=>setModalShow(true)} className="btn2">
-                View chember
+              <button style={{border:"none", borderRadius:"7px"}} href="" onClick={()=>setModalShow(true)} className="btn2">
+                View chamber
               </button>
             </div>
           </div>

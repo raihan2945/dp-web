@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React,{useState} from "react";
 import ModalUI from "../../UI/Modal";
 
@@ -7,19 +8,27 @@ const Footer = ({data}) => {
     <>
       <div className="footer">
         <div className="container footer-bottom clearfix">
-          <div className="copyright">
-            © Copyright{" "}
-            <strong>
-              <span>Impala Intec</span>
-            </strong>
-            . All Rights Reserved
+        <div className="nav-links" style={{display:"flex", justifyContent:"center", gap:"1rem",}}>
+                          <a href="#about">About doctor</a>
+                          <a href="#education">Education</a>
+                          <a href="#experience">Experiences</a>
+                          <a href="#chamber">Chamber</a>
+                          <a href="#speciality">Speciality & Services</a>
+                          <a href="#gallery">Gallery</a>
+                          <a href="#video-gallery">Video Gallery</a>
+                          <a href="#contact">Contact Us</a>
+                        </div>
+
+          <div className="facebook" style={{display:"flex",justifyContent:"center", gap:"1rem", alignItems:'center', margin:"2rem 0rem"}}>
+           <Link href="https://www.facebook.com/mosleh.uddin.969"> <i style={{fontSize:"1.2rem"}} class="fab fa-facebook"></i></Link>
+           <Link href=""> <i style={{fontSize:"1.2rem"}} class="fab fa-youtube"></i></Link>
           </div>
-          <div className="credits">
+          <div className="credits" style={{display:'flex', justifyContent:"center"}}>
             {/* All the links in the footer should remain intact. */}
             {/* You can delete the links only if you purchased the pro version. */}
             {/* Licensing information: https://bootstrapmade.com/license/ */}
             {/* Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ */}
-            Developed by <a href="https://bootstrapmade.com/">Impala Intech</a>
+           <span>Powered by  <a href="digipathy.com"> digipathy.com</a></span> 
           </div>
         </div>
       </div>

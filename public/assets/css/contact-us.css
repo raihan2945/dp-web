@@ -60,11 +60,13 @@
     font-size: 1.1rem;
     padding: .5rem 2rem;
     background-color: #0032B7;
+    border-radius: "5px";
 }
 #contact .btn-container .btn2{
     color: #0032B7;
+    border-radius: "5px";
     font-size: 1.1rem;
-    padding: .5rem 2rem;
+    padding: 1rem 2rem;
     background-color: white;
 }
 

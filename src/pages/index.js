@@ -6,7 +6,7 @@ import EducationAndTarining from "../components/EducationAndTarining/EducationAn
 import Experience from "../components/Experience/Experience";
 import HeroSection from "../components/Hero/HeroSection";
 import Header from "../components/Layout/Header/Header";
-import axios from "axios";
+import axios, { all } from "axios";
 import { useEffect, useState } from "react";
 import Chamber from "../components/Chamber/Chamber";
 import Speciality from "../components/Speciality/Speciality";
@@ -14,6 +14,7 @@ import Gallery from "../components/Gallery/Gallery";
 import VideoGallery from "../components/VideoGallery/VideoGallery";
 import ContactUs from "../components/ContactUs/ContactUs";
 import Footer from "../components/Layout/Header/Footer";
+import Personal from "../components/Personal/Personal";
 
 // import '../../public/fonts/Axiforma-Bold.ttf';
 // import '/fonts/AXIFORMA-MEDIUM.TTF';
@@ -34,6 +35,16 @@ export default function Home() {
   useEffect(() => {
     getAllData();
   }, []);
+
+  const [offset, setOffset] = useState(0);
+
+  // useEffect(() => {
+  //     const onScroll = () => setOffset(window.pageYOffset);
+  //     // clean up code
+  //     window.removeEventListener('scroll', onScroll);
+  //     window.addEventListener('scroll', onScroll, { passive: true });
+  //     return () => window.removeEventListener('scroll', onScroll);
+  // }, []);
 
   // console.log("data is : ", allData)
 
@@ -93,12 +104,27 @@ export default function Home() {
           {/* <!-- // add bootstrap 5 js file --> */}
           <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
-
+          
+          {/* <!-- Template Main JS File --> */}
+          <script src="assets/js/main.js"></script>
+         
           {/* <!-- //add bundel js --> */}
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
         </Head>
         {loading ? (
-          <h1>loading</h1>
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              height: "100vh",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <h1 style={{ textAlign: "center", verticalAlign: "center" }}>
+              loading
+            </h1>
+          </div>
         ) : (
           <main>
             <section id="hero" className="d-flex align-items-center">
@@ -124,14 +150,11 @@ export default function Home() {
                           </label>
                         </div>
                         <div className="nav-links">
-                        <a href="#about">
-                            About doctor
-                          </a>
+                          <a href="#about">About doctor</a>
                           <a href="#education">Education</a>
                           <a href="#experience">Experiences</a>
                           <a href="#chamber">Chamber</a>
                           <a href="#speciality">Speciality & Services</a>
-                          <a href="#gallery">Gallery</a>
                           <a href="#gallery">Gallery</a>
                           <a href="#video-gallery">Video Gallery</a>
                           <a href="#contact">Contact Us</a>
@@ -201,6 +224,12 @@ export default function Home() {
               <section id="about" className="about-video">
                 <AboutUs data={allData} />
               </section>
+              {allData?.LifeFamily &&
+                <section id="personal" className="about-video">
+                  <Personal data={allData} />
+                </section>
+              }
+
               <section id="education" className="">
                 <EducationAndTarining data={allData} />
               </section>
@@ -229,6 +258,13 @@ export default function Home() {
           </main>
         )}
       </div>
+
+      <a
+        href="#"
+        class="back-to-top d-flex align-items-center justify-content-center"
+      >
+      <i class="fas fa-arrow-up"></i>
+      </a>
 
       {/* ---------------------------------------- */}
       {/* Modal */}

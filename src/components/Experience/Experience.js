@@ -12,10 +12,12 @@ const Experience = ({data}) => {
                     <div class="col-lg-6" style={{ marginBottom: "1rem" }}>
                     <div
                       style={{ borderRadius: "5px", border:'1px solid #F0F0F2'}}
-                      className="rounded-lg py-3 px-3 md:mb-0 md:py-[1.4375rem] md:px-5"
+                      className="rounded-lg md:mb-0 md:py-[1.4375rem] md:px-5"
                     >
-                      <div style={{ display: "flex", gap: "1.5rem" }}>
+                      <div style={{ display: "flex", alignItems:"start", padding:"1.2rem", gap: "1.2rem" }}>
                         <div className="mr-3 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-[5px] bg-[#EAEEF9] sm:mr-5 sm:h-11 sm:w-11">
+                        <span style={{background:"#EAEEF9", padding:".7rem .5rem", borderRadius:"5px"}}>
+
                           <svg
                             width="24"
                             height="24"
@@ -30,6 +32,7 @@ const Experience = ({data}) => {
                               fill="#0032B7"
                             ></path>
                           </svg>
+                        </span>
                         </div>
                         <div>
                           <h6 className="designation">

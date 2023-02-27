@@ -1,4 +1,5 @@
-import React,{useState} from "react";
+import Link from "next/link";
+import React, { useState } from "react";
 import { baseUrl } from "../../../utility/url";
 import Modal from "../UI/Modal";
 
@@ -37,20 +38,36 @@ const HeroSection = ({ data }) => {
                 </span>
                 <span>
                   {" "}
-                  {Math.round(data?.YearsOfExperience)} years of experience
+                  {Math.round(data?.YearsOfExperience)}+ years of experience
                 </span>
               </p>
-              <p style={{ fontSize: ".9rem" }}>
-                {data?.SubSpeciality.map((s) => (
-                  <span style={{}}>
-                    {s}{" "}
-                    <i
-                      class="fas fa-circle"
-                      style={{ fontSize: ".3rem", color: "#919399" }}
-                    ></i>{" "}
-                  </span>
+              <div
+                className="edu"
+                style={{
+                  fontSize: ".9rem",
+                  display: "flex",
+                  gap: ".5rem",
+                  alignItems: "center",
+                }}
+              >
+                {data?.Educations.map((s, index) => (
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <p style={{ margin: "0rem" }}>{s.Code} </p>
+                    {index == Number(data?.Educations.length) - 1 ? (
+                      ""
+                    ) : (
+                      <i
+                        class="fas fa-circle"
+                        style={{
+                          marginLeft: ".5rem",
+                          fontSize: ".4rem",
+                          color: "#919399",
+                        }}
+                      ></i>
+                    )}
+                  </div>
                 ))}
-              </p>
+              </div>
               {/* <div className="s-container">
               <div className="s-item">{data?.Speciality}</div>
             </div> */}
@@ -83,11 +100,37 @@ const HeroSection = ({ data }) => {
                 type="button"
                 data-toggle="modal"
                 data-target="#exampleModalCenter"
-                onClick={()=>setModalShow(true)}
+                onClick={() => setModalShow(true)}
               >
                 Call for Appointment
               </button>
-              <button className="button2" onClick={()=>setModalShow(true)}>View Chamber</button>
+              <button className="button2" onClick={() => setModalShow(true)}>
+                View Chamber
+              </button>
+            </div>
+
+            <div style={{ marginTop: "3rem" }} className="media_links">
+              <div className="icon-box">
+                <Link href="https://www.facebook.com/mosleh.uddin.969">
+                <i className="fab fa-facebook"></i>
+                </Link>
+              </div>
+              <div className="icon-box">
+                <Link href="">
+                <i class="fab fa-youtube"></i>
+                </Link>
+              </div>
+              <div className="icon-box">
+                <Link href="">
+                <i class="fab fa-twitter"></i>
+                </Link>
+              </div>
+              <div className="icon-box">
+                <Link href="">
+                <i class="fab fa-linkedin-in"></i>
+                </Link>
+              </div>
+              
             </div>
           </div>
           <div
@@ -97,14 +140,14 @@ const HeroSection = ({ data }) => {
           >
             <img
               src={`${baseUrl}${data?.ProfileImage}`}
-              className="img-fluid animated"
+              className="img-fluid"
               alt=""
             />
           </div>
         </div>
       </div>
 
-      <Modal show={modalShow} onHide={() => setModalShow(false)} data={data}/>
+      <Modal show={modalShow} onHide={() => setModalShow(false)} data={data} />
     </>
   );
 };

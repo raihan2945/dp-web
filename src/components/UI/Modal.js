@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import moment from "moment";
 
 const ModalUI = (props) => {
   return (
@@ -18,18 +19,24 @@ const ModalUI = (props) => {
       <Modal.Body>
         {props.data?.Chambers.map((item) => {
           return (
-            <div class="col-sm-12" style={{ marginBottom: "1rem" }}>
+            <div class="col-lg-12" style={{ marginBottom: "1rem" }}>
               <div
                 style={{
                   borderRadius: "5px",
                   height: "100%",
                   border: "1px solid #F0F0F2",
                 }}
-                className="rounded-lg py-3 px-3 md:mb-0 md:py-[1.4375rem] md:px-5"
+                className="rounded-lg md:mb-0 md:py-[1.4375rem] md:px-5"
               >
-                <div style={{ display: "flex", gap: "1.5rem" }}>
-                  <div className="mr-2 mb-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-[5px] bg-[#EAEEF9] sm:mr-5 sm:h-11 sm:w-11">
-                    <span>
+                <div style={{ display: "flex", alignItems:"start", padding:"1.2rem", gap: "1.2rem" }}>
+                  <div className="mt-1 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-[5px] bg-[#EAEEF9] sm:mr-5 sm:h-11 sm:w-11">
+                    <span
+                      style={{
+                        background: "#EAEEF9",
+                        padding: ".7rem .5rem",
+                        borderRadius: "5px",
+                      }}
+                    >
                       <svg
                         width="20"
                         height="20"
@@ -95,9 +102,17 @@ const ModalUI = (props) => {
                         Available time :
                       </span>{" "}
                       <span style={{ fontSize: ".8rem" }}>
-                        {item.AvailableTime}
+                      {moment(`${item.AvailableTime.split("-")[0]}}`, ["HH:mm"]).format("hh:mm a")}
+                      </span>
+                      -
+                     
+                      <span style={{ fontSize: ".8rem" }}>
+                        {moment(`${item.AvailableTime.split("-")[1]}}`, ["HH:mm"]).format("hh:mm a")}
+                        {/* {item.AvailableTime.split("-")[1]} */}
                       </span>
                     </div>
+                    <div style={{display:'flex', justifyContent:"", gap:"2rem"}}>
+
                     <div
                       style={{
                         display: "flex",
@@ -135,6 +150,47 @@ const ModalUI = (props) => {
                         </p>
                       </div>
                     </div>
+                    {(
+                      <div
+                        style={{
+                          display: "flex",
+                          gap: ".5rem",
+                          marginTop: ".8rem",
+                          alignItems: "center",
+                        }}
+                      >
+                        <div
+                          style={{
+                            backgroundColor: "#F7F7F7",
+                            padding: ".5rem",
+                            borderRadius: "5px",
+                            height: "35px",
+                            width: "35px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div style={{}}>
+                          <p
+                            style={{
+                              margin: "0",
+                              fontSize: ".8rem",
+                              color: "#919399",
+                            }}
+                          >
+                            Assistant
+                          </p>
+                          <p style={{ margin: "0", fontSize: ".8rem" }}>
+                            {item.AppointmentNumber}
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                    </div>
+
                   </div>
                 </div>
               </div>

@@ -1,7 +1,7 @@
 #eduction-secion{
     background-color: white;
     padding: 5rem;
-    margin-top: -5rem;
+    margin-top: 5rem;
 }
 
 #eduction h1{
@@ -22,7 +22,7 @@
 
 /* ----------Training----------- */
 #training{
-    margin-top: 1rem;
+    margin-top: 3rem;
 }
 
 #training h1{
@@ -42,7 +42,7 @@
 }
 /* ----------Training----------- */
 #research-paper{
-    margin-top: 1rem;
+    margin-top: 3rem;
 }
 
 #research-paper h1{

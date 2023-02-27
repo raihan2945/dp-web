@@ -1,6 +1,10 @@
 import React from "react";
+import moment from "moment/moment";
 
 const Chamber = ({ data }) => {
+
+  // const number = moment("14.00", ["HH:mm"]).format("hh:mm a");
+
   return (
     <div className="container">
       <div className="chamber-section" id="chamber-section">
@@ -11,12 +15,22 @@ const Chamber = ({ data }) => {
               return (
                 <div class="col-lg-6" style={{ marginBottom: "1rem" }}>
                   <div
-                    style={{ borderRadius: "5px", height: "100%", border:"1px solid #F0F0F2" }}
-                    className="rounded-lg py-3 px-3 md:mb-0 md:py-[1.4375rem] md:px-5"
+                    style={{
+                      borderRadius: "5px",
+                      height: "100%",
+                      border: "1px solid #F0F0F2",
+                    }}
+                    className="rounded-lg md:mb-0 md:py-[1.4375rem] md:px-5"
                   >
-                    <div style={{ display: "flex", gap: "1.5rem" }}>
-                      <div className="mr-2 mb-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-[5px] bg-[#EAEEF9] sm:mr-5 sm:h-11 sm:w-11">
-                        <span>
+                    <div style={{ display: "flex", alignItems:"start", padding:"1.2rem", gap: "1.2rem" }}>
+                      <div className="mt-1 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-[5px] bg-[#EAEEF9] sm:mr-5 sm:h-11 sm:w-11">
+                        <span
+                          style={{
+                            background: "#EAEEF9",
+                            padding: ".7rem .5rem",
+                            borderRadius: "5px",
+                          }}
+                        >
                           <svg
                             width="20"
                             height="20"
@@ -50,22 +64,27 @@ const Chamber = ({ data }) => {
                             display: "flex",
                             alignItems: "center",
                             gap: ".5rem",
-                            padding:".5rem 0rem"
+                            padding: ".5rem 0rem",
                           }}
                         >
                           <i
                             style={{ color: "#919399" }}
                             class="fas fa-map-marker-alt"
                           ></i>
-                          <p className="address" style={{fontSize:".8rem", margin:"0"}}>{item.Address}</p>
+                          <p
+                            className="address"
+                            style={{ fontSize: ".8rem", margin: "0" }}
+                          >
+                            {item.Address}
+                          </p>
                         </div>
                         <div>
-                          <span style={{ color: "#A3A3AA", fontSize:".8rem" }}>
+                          <span style={{ color: "#A3A3AA", fontSize: ".8rem" }}>
                             Available days :
                           </span>{" "}
                           {item?.AvailableDays.map((day, index) => {
                             return (
-                              <span style={{fontSize:".8rem"}}>
+                              <span style={{ fontSize: ".8rem" }}>
                                 {index == 0 ? "" : ", "}
                                 {day}
                               </span>
@@ -73,29 +92,99 @@ const Chamber = ({ data }) => {
                           })}
                         </div>
                         <div>
-                          <span style={{ color: "#A3A3AA", fontSize:".8rem"}}>
+                          <span style={{ color: "#A3A3AA", fontSize: ".8rem" }}>
                             Available time :
                           </span>{" "}
-                          <span style={{fontSize:".8rem"}}>{item.AvailableTime}</span>
+                          <span style={{ fontSize: ".8rem" }}>
+                          {moment(`${item.AvailableTime.split("-")[0]}}`, ["HH:mm"]).format("hh:mm a")}
+                          </span>
+                          -
+                         
+                          <span style={{ fontSize: ".8rem" }}>
+                            {moment(`${item.AvailableTime.split("-")[1]}}`, ["HH:mm"]).format("hh:mm a")}
+                            {/* {item.AvailableTime.split("-")[1]} */}
+                          </span>
                         </div>
+                        <div style={{display:'flex', justifyContent:"", gap:"2rem"}}>
+
                         <div
                           style={{
                             display: "flex",
                             gap: ".5rem",
                             marginTop: ".8rem",
-                            alignItems:'center'
+                            alignItems: "center",
                           }}
                         >
-                          <div style={{backgroundColor:"#F7F7F7", padding:".5rem", borderRadius:"5px", height:"35px", width:"35px", display:'flex', alignItems:"center", justifyContent:"center"}}>
+                          <div
+                            style={{
+                              backgroundColor: "#F7F7F7",
+                              padding: ".5rem",
+                              borderRadius: "5px",
+                              height: "35px",
+                              width: "35px",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                            }}
+                          >
                             <i class="fas fa-phone-alt"></i>
                           </div>
                           <div style={{}}>
-                            <p style={{ margin: "0", fontSize:".8rem", color:"#919399" }}>Chamber phone number</p>
-                            <p style={{ margin: "0", fontSize:".8rem" }}>
+                            <p
+                              style={{
+                                margin: "0",
+                                fontSize: ".8rem",
+                                color: "#919399",
+                              }}
+                            >
+                              Chamber phone number
+                            </p>
+                            <p style={{ margin: "0", fontSize: ".8rem" }}>
                               {item.AppointmentNumber}
                             </p>
                           </div>
                         </div>
+                        {(
+                          <div
+                            style={{
+                              display: "flex",
+                              gap: ".5rem",
+                              marginTop: ".8rem",
+                              alignItems: "center",
+                            }}
+                          >
+                            <div
+                              style={{
+                                backgroundColor: "#F7F7F7",
+                                padding: ".5rem",
+                                borderRadius: "5px",
+                                height: "35px",
+                                width: "35px",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                              }}
+                            >
+                              <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div style={{}}>
+                              <p
+                                style={{
+                                  margin: "0",
+                                  fontSize: ".8rem",
+                                  color: "#919399",
+                                }}
+                              >
+                                Assistant
+                              </p>
+                              <p style={{ margin: "0", fontSize: ".8rem" }}>
+                                {item.AppointmentNumber}
+                              </p>
+                            </div>
+                          </div>
+                        )}
+                        </div>
+
                       </div>
                     </div>
                   </div>
