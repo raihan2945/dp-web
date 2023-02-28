@@ -144,7 +144,7 @@ const Chamber = ({ data }) => {
                             </p>
                           </div>
                         </div>
-                        {(
+                        {item?.AssistantNumber && (
                           <div
                             style={{
                               display: "flex",
@@ -178,7 +178,7 @@ const Chamber = ({ data }) => {
                                 Assistant
                               </p>
                               <p style={{ margin: "0", fontSize: ".8rem" }}>
-                                {item.AppointmentNumber}
+                                {item?.AssistantNumber}
                               </p>
                             </div>
                           </div>

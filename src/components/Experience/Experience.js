@@ -44,7 +44,7 @@ const Experience = ({data}) => {
                             <span className="mt-1 font-normal text-xs" style={{fontSize:".8rem"}}>
                             {/* moment(testDate,'mm/dd/yyyy'); */}
                              {/* {`${new Date(item?.From)}`} - {item.Current == true ? "Current" : item.To} */}
-                             {`${moment(new Date(item?.From)).format("MMMM DD YYYY")}`} - {item.Current == true ? "Current" : `${moment(new Date(item?.From)).format("MMMM DD YYYY")}`}
+                             {`${moment(new Date(item?.From)).format("MMMM, DD, YYYY")}`} - {item.Current == true ? "Current" : `${moment(new Date(item?.From)).format("MMMM, DD, YYYY")}`}
                              {/* {item.From} - {item.Current == true ? "Current" : item.To} */}
                             </span>
                           </div>

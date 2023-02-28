@@ -62,7 +62,7 @@ const EducationAndTarining = ({ data }) => {
                           {item.Name}
                           {/**/}
                         </h6>
-                        <p className="institute">{item.Institution}</p>
+                        <p className="institute">{item?.Institution}</p>
                         <div
                           className="coutnry-and-year"
                           style={{ display: "flex", gap: "5px" }}
@@ -87,7 +87,7 @@ const EducationAndTarining = ({ data }) => {
                               fontSize: ".8rem",
                             }}
                           >
-                            {item.Year}
+                            {item?.Year}
                           </span>
                         </div>
                       </div>
@@ -136,8 +136,8 @@ const EducationAndTarining = ({ data }) => {
                         </span>
                       </div>
                       <div>
-                        <h6 className="training-title">{item.TrainingOn}</h6>
-                        <p className="institute mt-2">{item.Institution}</p>
+                        <h6 className="training-title">{item?.TrainingOn}</h6>
+                        <p className="institute mt-2">{item?.Institution}</p>
                         <div
                           className="date"
                           style={{ display: "flex", gap: "5px" }}
@@ -151,7 +151,7 @@ const EducationAndTarining = ({ data }) => {
                               fontSize: ".8rem",
                             }}
                           >
-                            {item.StartDate} - {item.EndDate}
+                            {item?.StartDate} - {item?.EndDate}
                           </span>
                         </div>
                       </div>
@@ -214,14 +214,14 @@ const EducationAndTarining = ({ data }) => {
                         </span>
                       </div>
                       <div>
-                        <h6 className="JournalName">{item.JournalName}</h6>
-                        <p className="institute">{item.Title}</p>
+                        <h6 className="JournalName">{item?.JournalName}</h6>
+                        <p className="institute">{item?.Title}</p>
                         <div className="date" style={{ display: "flex" }}>
                           <span
                             className="mt-1 font-normal text-xs"
                             style={{ fontSize: ".8rem" }}
                           >
-                            {item.PublishingDate}
+                            {item?.PublishingDate}
                           </span>
                         </div>
                       </div>
