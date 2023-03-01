@@ -20,13 +20,13 @@ import Personal from "../components/Personal/Personal";
 // import '/fonts/AXIFORMA-MEDIUM.TTF';
 // import '/fonts/AXIFORMA-REGULAR.TTF';
 
-export default function Home() {
+export default function Home () {
   const [allData, setAllData] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const getAllData = async () => {
     setLoading(true);
-    const data = await axios.get("https://drmoslehuddin.com/context.json");
+    const data = await axios.get("./context.json");
     setAllData(data.data);
 
     setLoading(false);
@@ -104,10 +104,10 @@ export default function Home() {
           {/* <!-- // add bootstrap 5 js file --> */}
           <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
-          
+
           {/* <!-- Template Main JS File --> */}
           <script src="assets/js/main.js"></script>
-         
+
           {/* <!-- //add bundel js --> */}
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
         </Head>
@@ -229,11 +229,11 @@ export default function Home() {
                   <Personal data={allData} />
                 </section>
               }
-                 {allData?.Educations &&
-              <section id="education" className="">
-                <EducationAndTarining data={allData} />
-              </section>
-                }
+              {allData?.Educations &&
+                <section id="education" className="">
+                  <EducationAndTarining data={allData} />
+                </section>
+              }
               <section id="experience" className="experience">
                 <Experience data={allData} />
               </section>
@@ -264,7 +264,7 @@ export default function Home() {
         href="#"
         class="back-to-top d-flex align-items-center justify-content-center"
       >
-      <i class="fas fa-arrow-up"></i>
+        <i class="fas fa-arrow-up"></i>
       </a>
 
       {/* ---------------------------------------- */}
