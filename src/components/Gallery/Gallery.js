@@ -2,17 +2,23 @@ import React, { useState } from "react";
 import MultiCarousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-import { baseUrl } from "../../../utility/url";
 import ImageModal from "../UI/ImageModal";
 
-// import ImageGallery from 'react-image-gallery';
-// import { Carousel } from 'react-carousel-minimal';
 import Carousel from "react-gallery-carousel";
 import "react-gallery-carousel/dist/index.css";
 
 const Gallery = ({ data }) => {
+  // const router = useRouter();
   const [modalShow, setModalShow] = useState(false);
   const [imageIndex, setImageIndex] = useState(0);
+
+    const origin =
+        typeof window !== 'undefined' && window.location.origin
+            ? window.location.origin
+            : '';
+
+    const URL = process.env.BASE_URL || `${origin}`;
+    // console.log("url -", URL)
 
   const responsive = {
     superLargeDesktop: {
@@ -34,18 +40,10 @@ const Gallery = ({ data }) => {
     },
   };
 
-  const images = [9, 8, 7, 6, 5].map((number) => ({
-    src: `https://placedog.net/${number}00/${number}00?id=${number}`,
-  }));
-  const allImage = data?.Photos.map((item) => ({
-    src: `${baseUrl}${item}`,
-  }));
 
-  // const allImage = data?.Photos.map((item, index)=>{
-    
-  //   return()src:`${baseUrl}${item}`
-    
-  // })
+  const allImage = data?.Photos.map((item) => ({
+    src: `${URL}/${item}`,
+  }));
 
   return (
     <>
@@ -75,7 +73,7 @@ const Gallery = ({ data }) => {
                         height: "100%",
                         objectFit: "cover",
                       }}
-                      src={`${baseUrl}${item}`}
+                      src={`${URL}/${item}`}
                     />
                   </div>
                 );

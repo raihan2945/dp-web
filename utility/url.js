@@ -1,1 +1,0 @@
-export const baseUrl = "https://drmoslehuddin.com/"

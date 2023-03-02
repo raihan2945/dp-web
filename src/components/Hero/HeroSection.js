@@ -1,10 +1,16 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import { baseUrl } from "../../../utility/url";
 import Modal from "../UI/Modal";
 
 const HeroSection = ({ data }) => {
   const [modalShow, setModalShow] = useState(false);
+  
+  const origin =
+  typeof window !== 'undefined' && window.location.origin
+      ? window.location.origin
+      : '';
+
+const URL = process.env.BASE_URL || `${origin}`;
   return (
     <>
       <div className="container">
@@ -127,7 +133,7 @@ const HeroSection = ({ data }) => {
             data-aos-delay={200}
           >
             <img
-              src={`${baseUrl}${data?.ProfileImage}`}
+              src={`${URL}/${data?.ProfileImage}`}
               className="img-fluid"
               alt=""
             />
