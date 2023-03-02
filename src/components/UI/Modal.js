@@ -150,7 +150,7 @@ const ModalUI = (props) => {
                         </p>
                       </div>
                     </div>
-                    {(
+                    {item?.AssistantNumber &&(
                       <div
                         style={{
                           display: "flex",
@@ -159,6 +159,7 @@ const ModalUI = (props) => {
                           alignItems: "center",
                         }}
                       >
+                        
                         <div
                           style={{
                             backgroundColor: "#F7F7F7",
@@ -184,7 +185,7 @@ const ModalUI = (props) => {
                             Assistant
                           </p>
                           <p style={{ margin: "0", fontSize: ".8rem" }}>
-                            {item.AppointmentNumber}
+                            {item?.AssistantNumber}
                           </p>
                         </div>
                       </div>
