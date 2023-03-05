@@ -18,4 +18,4 @@ context.json file is get from path `./context.json`
 ```cmd
 yarn build
 ```
-Output will be inside ./build folder
+Output will be inside ./out folder

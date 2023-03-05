@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  generateBuildId: async () => {
+    return revision = require('child_process')
+      .execSync('git rev-parse --short HEAD')
+      .toString().trim()
+  },
+  poweredByHeader: false,
   reactStrictMode: true,
   distDir: 'build',
   exportPathMap: async function (

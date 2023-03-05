@@ -1,6 +1,6 @@
 import Head from "next/head";
 import AboutUs from "../components/AboutUs/AboutUs";
-import EducationAndTarining from "../components/EducationAndTarining/EducationAndTarining";
+import EducationAndTarining from "../components/EducationAndTraining/EducationAndTraining";
 import Experience from "../components/Experience/Experience";
 import HeroSection from "../components/Hero/HeroSection";
 import axios from "axios";
@@ -148,7 +148,7 @@ export default function Home () {
               </div>
             </header>
 
-            
+
             <div
               data-bs-spy="scroll"
               data-bs-target="#navbar-example2"
