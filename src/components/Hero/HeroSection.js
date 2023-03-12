@@ -56,10 +56,10 @@ const URL = process.env.BASE_URL || `${origin}`;
                   alignItems: "center",
                 }}
               >
-                {data?.Educations.map((s, index) => (
+                {data?.Educations?.length > 0 && data?.Educations?.map((s, index) => (
                   <div style={{ display: "flex", alignItems: "center" }}>
                     <p style={{ margin: "0rem" }}>{s.Code} </p>
-                    {index == Number(data?.Educations.length) - 1 ? (
+                    {index == Number(data?.Educations?.length) - 1 ? (
                       ""
                     ) : (
                       <i
@@ -116,7 +116,7 @@ const URL = process.env.BASE_URL || `${origin}`;
             </div>
 
             <div style={{ marginTop: "3rem" }} className="media_links">
-              {data?.MediaLinks.map((item) => {
+              {data?.MediaLinks?.length > 0 && data?.MediaLinks.map((item) => {
                 return (
                   <div className="icon-box">
                     <a href={`https://${item.value}`}>

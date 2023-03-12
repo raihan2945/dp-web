@@ -28,14 +28,14 @@ const VideoGallery = ({ data }) => {
         <h1>Video Gallery</h1>
         {data?.VideoLinks && (
           <Carousel autoPlay={true} infinite={true} responsive={responsive}>
-            {data?.VideoLinks.map((item) => {
+            {data?.VideoLinks?.length > 0 && data?.VideoLinks?.map((item) => {
               return (
                 <div style={{ width: "100%", height: "100%", padding: "1rem" }}>
                   <iframe
                   width="100%"
                   height="315"
-                    // src={`${item.value}`}
-                    src="https://www.youtube.com/embed/FjOxLLFIPm8/0.jpg?mode=opaque&amp;rel=0&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent"
+                    src={`${item?.value}`}
+                    // src="https://www.youtube.com/embed/FjOxLLFIPm8/0.jpg?mode=opaque&amp;rel=0&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

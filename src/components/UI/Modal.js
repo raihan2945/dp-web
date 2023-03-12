@@ -17,7 +17,7 @@ const ModalUI = (props) => {
       </Modal.Title> */}
       </Modal.Header>
       <Modal.Body>
-        {props.data?.Chambers.map((item) => {
+        {props?.data?.Chambers.length > 0 && props?.data?.Chambers?.map((item) => {
           return (
             <div class="col-lg-12" style={{ marginBottom: "1rem" }}>
               <div
@@ -64,7 +64,7 @@ const ModalUI = (props) => {
                     </span>
                   </div>
                   <div>
-                    <h6 className="designation">{item.Name}</h6>
+                    <h6 className="designation">{item?.Name}</h6>
                     <div
                       style={{
                         display: "flex",
@@ -81,7 +81,7 @@ const ModalUI = (props) => {
                         className="address"
                         style={{ fontSize: ".8rem", margin: "0" }}
                       >
-                        {item.Address}
+                        {item?.Address}
                       </p>
                     </div>
                     <div>
@@ -102,12 +102,12 @@ const ModalUI = (props) => {
                         Available time :
                       </span>{" "}
                       <span style={{ fontSize: ".8rem" }}>
-                      {moment(`${item.AvailableTime.split("-")[0]}}`, ["HH:mm"]).format("hh:mm a")}
+                      {moment(`${item?.AvailableTime?.split("-")[0]}}`, ["HH:mm"]).format("hh:mm a")}
                       </span>
                       -
                      
                       <span style={{ fontSize: ".8rem" }}>
-                        {moment(`${item.AvailableTime.split("-")[1]}}`, ["HH:mm"]).format("hh:mm a")}
+                        {moment(`${item?.AvailableTime?.split("-")[1]}}`, ["HH:mm"]).format("hh:mm a")}
                         {/* {item.AvailableTime.split("-")[1]} */}
                       </span>
                     </div>
@@ -146,7 +146,7 @@ const ModalUI = (props) => {
                           Chamber phone number
                         </p>
                         <p style={{ margin: "0", fontSize: ".8rem" }}>
-                          {item.AppointmentNumber}
+                          {item?.AppointmentNumber}
                         </p>
                       </div>
                     </div>

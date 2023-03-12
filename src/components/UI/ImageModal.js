@@ -16,7 +16,7 @@ const ImageModal = (props) => {
       </Modal.Title> */}
       </Modal.Header>
       <Modal.Body>
-        {props.children}
+        {props?.children}
       </Modal.Body>
       {/* <Modal.Footer>
       <Button onClick={props.onHide}>Close</Button>

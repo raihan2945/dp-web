@@ -3,7 +3,7 @@ import AboutUs from "../components/AboutUs/AboutUs";
 import EducationAndTarining from "../components/EducationAndTraining/EducationAndTraining";
 import Experience from "../components/Experience/Experience";
 import HeroSection from "../components/Hero/HeroSection";
-import axios from "axios";
+import axios, { all } from "axios";
 import { useEffect, useState } from "react";
 import Chamber from "../components/Chamber/Chamber";
 import Speciality from "../components/Speciality/Speciality";
@@ -36,9 +36,9 @@ export default function Home () {
         <Head>
           <meta name="viewport" content="width=device-width,initial-scale=1" />
           <meta charset="UTF-8" />
-          <title>[DP_DOCTOR_FULL_TITLE]</title>
-          <meta name="description" content="[DP_DOCTOR_DESCRIPTION]" />
-          <meta name="keywords" content="[DP_DOCTOR_KEYWORDS]" />
+          <title>{allData?.Title} {allData?.Title}</title>
+          <meta name="description" content={allData?.Bio} />
+          <meta name="keywords" content={allData?.Services} />
           <meta name="author" content="Digipathy" />
           <meta property="og:image" content="https://digipathy.com/share.png" data-qmeta="ogImage" />
           <meta property="og:image:width" content="1200" data-qmeta="ogImageWidth" />
@@ -118,9 +118,14 @@ export default function Home () {
           </div>
         ) : (
           <main>
+
+            {allData && 
+            
             <section id="hero" className="d-flex align-items-center">
               <HeroSection data={allData} />
             </section>
+            }
+
 
             <header
               className="header-area header-sticky wow slideInDown"
@@ -166,33 +171,50 @@ export default function Home () {
               tabindex="0"
             >
               <section id="about" className="about-video">
+                {allData?.Bio &&
                 <AboutUs data={allData} />
+                }
               </section>
               {allData?.LifeFamily &&
                 <section id="personal" className="about-video">
                   <Personal data={allData} />
                 </section>
               }
-              {allData?.Educations &&
+              {allData &&
                 <section id="education" className="">
-                  <EducationAndTarining data={allData} />
+                  <EducationAndTarining educations={allData?.Educations} trainings={allData?.Trainings} researchs={allData?.Researchs}/>
                 </section>
               }
+              {
+                allData && allData?.Experiences &&
               <section id="experience" className="experience">
                 <Experience data={allData} />
               </section>
+              }
+              {
+              allData && allData?.Chambers &&
               <section id="chamber" className="chamber">
                 <Chamber data={allData} />
               </section>
+              }
+              {
+                allData && 
               <section id="speciality" className="speciality">
                 <Speciality data={allData} />
               </section>
+              }
+              {
+                allData && allData?.Photos && 
               <section id="gallery" className="gallery">
                 <Gallery data={allData} />
               </section>
+              }
+              {
+                allData && allData?.VideoLinks &&
               <section id="video-gallery" className="video-gallery">
                 <VideoGallery data={allData} />
               </section>
+              }
               <section id="contact-us" className="contact-us">
                 <ContactUs data={allData} />
               </section>

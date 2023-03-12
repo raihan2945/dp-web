@@ -1,109 +1,126 @@
 import React from "react";
 
-const EducationAndTarining = ({ data }) => {
+const EducationAndTarining = ({ educations, trainings, researchs }) => {
+  console.log("educations is : ", educations);
+  console.log("trainigs is : ", trainings);
+  console.log("researchs is : ", researchs);
   return (
     <div className="container">
       <div className="eduction-secion" id="eduction-secion">
-        <div className="education" id="eduction">
-          <div class="row">
-            <h1 className="col-12">Education</h1>
+        {educations && educations.length > 0 && (
+          <div className="education" id="eduction">
+            <div class="row">
+              <h1 className="col-12">Education</h1>
 
-            {data?.Educations.map((item) => {
-              return (
-                <div class="col-lg-6" style={{ marginBottom: "1.5rem" }}>
-                  <div
-                    style={{
-                      borderRadius: "5px",
-                      height: "100%",
-                      border: "1px solid #F0F0F2",
-                    }}
-                    className="rounded-lg md:mb-0 md:py-[1.4375rem] md:px-5"
-                  >
-                    <div style={{ display: "flex", alignItems: "start", padding: "1.2rem", gap: "1.2rem" }}>
-                      <div style={{}} class="mt-1 items-center justify-center">
-                        <span style={{ background: "#EAEEF9", padding: ".7rem .5rem", borderRadius: "5px" }}>
-                          <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            {/* <rect width="24" height="24" fill="#EAEEF9"></rect>{" "} */}
-                            <g clip-path="url(#clip0_2064_10605)">
-                              <path
-                                d="M13.2833 15.8655C12.9273 16.0838 12.4715 16.2041 11.9997 16.2041C11.5278 16.2041 11.072 16.0839 10.716 15.8655L4.90443 12.3012C4.90443 12.3012 4.37988 11.9797 4.37988 12.7081C4.37988 13.5352 4.37988 16.0166 4.37988 16.0166C4.37988 16.0497 4.37988 16.2158 4.37988 16.2673C4.37988 18.1422 7.79132 20.1634 11.9995 20.1634C16.2077 20.1634 19.6191 18.1422 19.6191 16.2673C19.6191 16.2158 19.6191 16.0497 19.6191 16.0166C19.6191 16.0166 19.6191 13.3847 19.6191 12.5074C19.6191 11.9228 19.2462 12.2085 19.2462 12.2085L13.2833 15.8655Z"
-                                fill="#0032B7"
-                              ></path>{" "}
-                              <path
-                                d="M21.6651 9.46635C22.1116 9.19249 22.1116 8.74434 21.6651 8.47043L12.8119 4.04328C12.3653 3.76943 11.6346 3.76943 11.1881 4.04328L2.33491 8.47043C1.88836 8.74429 1.88836 9.19244 2.33491 9.46635L11.1881 14.8961C11.6346 15.1699 12.3653 15.1699 12.8119 14.8961"
-                                fill="#0032B7"
-                              ></path>{" "}
-                              <path
-                                d="M21.299 17.5145C21.299 16.0154 21.299 11.5178 21.299 11.5178C21.299 11.5178 21.3031 11.2338 21.1346 11.3276C20.9994 11.4028 20.668 11.5876 20.5513 11.6891C20.4165 11.8063 20.4468 12.0693 20.4468 12.0693C20.4468 12.0693 20.4468 16.1532 20.4468 17.5145C20.4468 17.5918 20.3804 17.6287 20.3487 17.6474C20.0427 17.8273 19.8369 18.1594 19.8369 18.5401C19.8369 19.1123 20.3007 19.5761 20.8729 19.5761C21.4451 19.5761 21.9089 19.1123 21.9089 18.5401C21.9089 18.1579 21.7016 17.8248 21.3936 17.6453C21.363 17.6275 21.299 17.5918 21.299 17.5145Z"
-                                fill="#0032B7"
-                              ></path>
-                            </g>{" "}
-                            <defs>
-                              <clipPath id="clip0_2064_10605">
-                                <rect
-                                  width="20"
-                                  height="20"
-                                  fill="white"
-                                  transform="translate(2 2)"
-                                ></rect>
-                              </clipPath>
-                            </defs>
-                          </svg>
-                        </span>
-                      </div>
-                      <div>
-                        <h6 className="education-title">
-                          {item.Name}
-                          {/**/}
-                        </h6>
-                        <p className="institute">{item?.Institution}</p>
+              {educations?.map((item) => {
+                return (
+                  <div class="col-lg-6" style={{ marginBottom: "1.5rem" }}>
+                    <div
+                      style={{
+                        borderRadius: "5px",
+                        height: "100%",
+                        border: "1px solid #F0F0F2",
+                      }}
+                      className="rounded-lg md:mb-0 md:py-[1.4375rem] md:px-5"
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "start",
+                          padding: "1.2rem",
+                          gap: "1.2rem",
+                        }}
+                      >
                         <div
-                          className="coutnry-and-year"
-                          style={{ display: "flex", gap: "5px" }}
+                          style={{}}
+                          class="mt-1 items-center justify-center"
                         >
                           <span
-                            className="mt-1 font-sm text-xs"
                             style={{
-                              border: "1px solid #E5E7EB",
-                              padding: "1px 6px",
-                              borderRadius: "3px",
-                              fontSize: ".8rem",
+                              background: "#EAEEF9",
+                              padding: ".7rem .5rem",
+                              borderRadius: "5px",
                             }}
                           >
-                            {item.Country}
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g clip-path="url(#clip0_2064_10605)">
+                                <path
+                                  d="M13.2833 15.8655C12.9273 16.0838 12.4715 16.2041 11.9997 16.2041C11.5278 16.2041 11.072 16.0839 10.716 15.8655L4.90443 12.3012C4.90443 12.3012 4.37988 11.9797 4.37988 12.7081C4.37988 13.5352 4.37988 16.0166 4.37988 16.0166C4.37988 16.0497 4.37988 16.2158 4.37988 16.2673C4.37988 18.1422 7.79132 20.1634 11.9995 20.1634C16.2077 20.1634 19.6191 18.1422 19.6191 16.2673C19.6191 16.2158 19.6191 16.0497 19.6191 16.0166C19.6191 16.0166 19.6191 13.3847 19.6191 12.5074C19.6191 11.9228 19.2462 12.2085 19.2462 12.2085L13.2833 15.8655Z"
+                                  fill="#0032B7"
+                                ></path>{" "}
+                                <path
+                                  d="M21.6651 9.46635C22.1116 9.19249 22.1116 8.74434 21.6651 8.47043L12.8119 4.04328C12.3653 3.76943 11.6346 3.76943 11.1881 4.04328L2.33491 8.47043C1.88836 8.74429 1.88836 9.19244 2.33491 9.46635L11.1881 14.8961C11.6346 15.1699 12.3653 15.1699 12.8119 14.8961"
+                                  fill="#0032B7"
+                                ></path>{" "}
+                                <path
+                                  d="M21.299 17.5145C21.299 16.0154 21.299 11.5178 21.299 11.5178C21.299 11.5178 21.3031 11.2338 21.1346 11.3276C20.9994 11.4028 20.668 11.5876 20.5513 11.6891C20.4165 11.8063 20.4468 12.0693 20.4468 12.0693C20.4468 12.0693 20.4468 16.1532 20.4468 17.5145C20.4468 17.5918 20.3804 17.6287 20.3487 17.6474C20.0427 17.8273 19.8369 18.1594 19.8369 18.5401C19.8369 19.1123 20.3007 19.5761 20.8729 19.5761C21.4451 19.5761 21.9089 19.1123 21.9089 18.5401C21.9089 18.1579 21.7016 17.8248 21.3936 17.6453C21.363 17.6275 21.299 17.5918 21.299 17.5145Z"
+                                  fill="#0032B7"
+                                ></path>
+                              </g>{" "}
+                              <defs>
+                                <clipPath id="clip0_2064_10605">
+                                  <rect
+                                    width="20"
+                                    height="20"
+                                    fill="white"
+                                    transform="translate(2 2)"
+                                  ></rect>
+                                </clipPath>
+                              </defs>
+                            </svg>
                           </span>
-                          <span
-                            className="mt-1 font-sm text-xs"
-                            style={{
-                              border: "1px solid #E5E7EB",
-                              padding: "1px 6px",
-                              borderRadius: "3px",
-                              fontSize: ".8rem",
-                            }}
+                        </div>
+                        <div>
+                          <h6 className="education-title">{item?.Name}</h6>
+                          <p className="institute">{item?.Institution}</p>
+                          <div
+                            className="coutnry-and-year"
+                            style={{ display: "flex", gap: "5px" }}
                           >
-                            {item?.Year}
-                          </span>
+                            <span
+                              className="mt-1 font-sm text-xs"
+                              style={{
+                                border: "1px solid #E5E7EB",
+                                padding: "1px 6px",
+                                borderRadius: "3px",
+                                fontSize: ".8rem",
+                              }}
+                            >
+                              {item.Country}
+                            </span>
+                            <span
+                              className="mt-1 font-sm text-xs"
+                              style={{
+                                border: "1px solid #E5E7EB",
+                                padding: "1px 6px",
+                                borderRadius: "3px",
+                                fontSize: ".8rem",
+                              }}
+                            >
+                              {item?.Year}
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
-        </div>
+        )}
         {/* -----------------------Training----------------- */}
-        {data.Trainings &&
+        {trainings && trainings.length > 0 && (
           <div className="training" id="training">
             <div class="row">
               <h1 className="col-12">Training</h1>
-              {data?.Trainings.map((item) => {
+              {trainings?.map((item) => {
                 return (
                   <div class="col-lg-6" style={{ marginBottom: "1rem" }}>
                     <div
@@ -114,9 +131,22 @@ const EducationAndTarining = ({ data }) => {
                       }}
                       className="rounded-lg border border-[#F0F0F2] md:mb-0 md:py-[1.4375rem] md:px-5"
                     >
-                      <div style={{ display: "flex", alignItems: "start", padding: "1.2rem", gap: "1.2rem" }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "start",
+                          padding: "1.2rem",
+                          gap: "1.2rem",
+                        }}
+                      >
                         <div className="mt-1 mr-3 flex h-15 w-15 flex-shrink-0 items-center justify-center rounded-[5px] bg-[#EAEEF9] sm:mr-5 sm:h-11 sm:w-11">
-                          <span style={{ background: "#EAEEF9", padding: ".7rem .5rem", borderRadius: "5px" }}>
+                          <span
+                            style={{
+                              background: "#EAEEF9",
+                              padding: ".7rem .5rem",
+                              borderRadius: "5px",
+                            }}
+                          >
                             <svg
                               width="24"
                               height="24"
@@ -162,14 +192,14 @@ const EducationAndTarining = ({ data }) => {
               })}
             </div>
           </div>
-        }
+        )}
         {/* -----------------------Research Paper----------------- */}
-        {data.Researchs &&
+        {researchs && researchs.length > 0 && (
           <div className="research-paper" id="research-paper">
             <div class="row">
               <h1 className="col-12">Research Paper</h1>
 
-              {data?.Researchs.map((item) => {
+              {researchs?.map((item) => {
                 return (
                   <div class="col-lg-6" style={{ marginBottom: "1rem" }}>
                     <div
@@ -180,9 +210,22 @@ const EducationAndTarining = ({ data }) => {
                       }}
                       className="rounded-lg md:mb-0 md:py-[1.4375rem] md:px-5"
                     >
-                      <div style={{ display: "flex", alignItems: "start", padding: "1.2rem", gap: "1.2rem" }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "start",
+                          padding: "1.2rem",
+                          gap: "1.2rem",
+                        }}
+                      >
                         <div className="mt-1 mr-3 flex h-15 w-15 flex-shrink-0 items-center justify-center rounded-[5px] bg-[#EAEEF9] sm:mr-5 sm:h-11 sm:w-11">
-                          <span style={{ background: "#EAEEF9", padding: ".7rem .5rem", borderRadius: "5px" }}>
+                          <span
+                            style={{
+                              background: "#EAEEF9",
+                              padding: ".7rem .5rem",
+                              borderRadius: "5px",
+                            }}
+                          >
                             <svg
                               width="24"
                               height="24"
@@ -232,7 +275,7 @@ const EducationAndTarining = ({ data }) => {
               })}
             </div>
           </div>
-        }
+        )}
       </div>
     </div>
   );

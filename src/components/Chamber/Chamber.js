@@ -11,7 +11,7 @@ const Chamber = ({ data }) => {
         <div className="chamber" id="chamber">
           <div class="row">
             <h1 className="col-12">Chamber</h1>
-            {data?.Chambers.map((item) => {
+            {data?.Chambers.length > 0 && data?.Chambers?.map((item) => {
               return (
                 <div class="col-lg-6" style={{ marginBottom: "1rem" }}>
                   <div
@@ -140,7 +140,7 @@ const Chamber = ({ data }) => {
                               Chamber phone number
                             </p>
                             <p style={{ margin: "0", fontSize: ".8rem" }}>
-                              {item.AppointmentNumber}
+                              {item?.AppointmentNumber}
                             </p>
                           </div>
                         </div>

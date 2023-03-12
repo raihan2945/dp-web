@@ -41,7 +41,7 @@ const Gallery = ({ data }) => {
   };
 
 
-  const allImage = data?.Photos.map((item) => ({
+  const allImage =data?.Photos.length > 0 && data?.Photos?.map((item) => ({
     src: `${URL}/${item}`,
   }));
 
@@ -56,7 +56,7 @@ const Gallery = ({ data }) => {
               infinite={true}
               responsive={responsive}
             >
-              {data?.Photos.map((item, index) => {
+              {data?.Photos && data?.Photos?.map((item, index) => {
                 return (
                   <div
                     onClick={() =>{
