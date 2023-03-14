@@ -36,9 +36,9 @@ export default function Home () {
         <Head>
           <meta name="viewport" content="width=device-width,initial-scale=1" />
           <meta charset="UTF-8" />
-          <title>{allData?.Title} {allData?.Title}</title>
-          <meta name="description" content={allData?.Bio} />
-          <meta name="keywords" content={allData?.Services} />
+          <title>[DP_DOCTOR_FULL_TITLE]</title>
+          <meta name="description" content="[DP_DOCTOR_DESCRIPTION]" />
+          <meta name="keywords" content="[DP_DOCTOR_KEYWORDS]" />
           <meta name="author" content="Digipathy" />
           <meta property="og:image" content="https://digipathy.com/share.png" data-qmeta="ogImage" />
           <meta property="og:image:width" content="1200" data-qmeta="ogImageWidth" />
@@ -119,11 +119,11 @@ export default function Home () {
         ) : (
           <main>
 
-            {allData && 
-            
-            <section id="hero" className="d-flex align-items-center">
-              <HeroSection data={allData} />
-            </section>
+            {allData &&
+
+              <section id="hero" className="d-flex align-items-center">
+                <HeroSection data={allData} />
+              </section>
             }
 
 
@@ -172,7 +172,7 @@ export default function Home () {
             >
               <section id="about" className="about-video">
                 {allData?.Bio &&
-                <AboutUs data={allData} />
+                  <AboutUs data={allData} />
                 }
               </section>
               {allData?.LifeFamily &&
@@ -182,38 +182,38 @@ export default function Home () {
               }
               {allData &&
                 <section id="education" className="">
-                  <EducationAndTarining educations={allData?.Educations} trainings={allData?.Trainings} researchs={allData?.Researchs}/>
+                  <EducationAndTarining educations={allData?.Educations} trainings={allData?.Trainings} researchs={allData?.Researchs} />
                 </section>
               }
               {
                 allData && allData?.Experiences &&
-              <section id="experience" className="experience">
-                <Experience data={allData} />
-              </section>
+                <section id="experience" className="experience">
+                  <Experience data={allData} />
+                </section>
               }
               {
-              allData && allData?.Chambers &&
-              <section id="chamber" className="chamber">
-                <Chamber data={allData} />
-              </section>
+                allData && allData?.Chambers &&
+                <section id="chamber" className="chamber">
+                  <Chamber data={allData} />
+                </section>
               }
               {
-                allData && 
-              <section id="speciality" className="speciality">
-                <Speciality data={allData} />
-              </section>
+                allData &&
+                <section id="speciality" className="speciality">
+                  <Speciality data={allData} />
+                </section>
               }
               {
-                allData && allData?.Photos && 
-              <section id="gallery" className="gallery">
-                <Gallery data={allData} />
-              </section>
+                allData && allData?.Photos &&
+                <section id="gallery" className="gallery">
+                  <Gallery data={allData} />
+                </section>
               }
               {
                 allData && allData?.VideoLinks &&
-              <section id="video-gallery" className="video-gallery">
-                <VideoGallery data={allData} />
-              </section>
+                <section id="video-gallery" className="video-gallery">
+                  <VideoGallery data={allData} />
+                </section>
               }
               <section id="contact-us" className="contact-us">
                 <ContactUs data={allData} />
