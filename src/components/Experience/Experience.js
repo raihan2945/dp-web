@@ -8,7 +8,7 @@ const Experience = ({data}) => {
         <div className="experience" id="experience">
           <div class="row">
             <h1 className="col-12">Working Experience</h1>
-            {data?.Experiences.map(item=>{
+            {Array.isArray(data?.Experiences) && data?.Experiences?.map(item=>{
                 return(
                     <div class="col-lg-6" style={{ marginBottom: "1rem" }}>
                     <div

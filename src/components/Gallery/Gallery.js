@@ -41,7 +41,7 @@ const Gallery = ({ data }) => {
   };
 
 
-  const allImage =data?.Photos.length > 0 && data?.Photos?.map((item) => ({
+  const allImage =data?.Photos.length > 0 && Array.isArray(data?.Photos) && data?.Photos?.map((item) => ({
     src: `${URL}/${item}`,
   }));
 
@@ -50,13 +50,13 @@ const Gallery = ({ data }) => {
       <div className="container">
         <div className="gallery-section" id="gallery-section">
           <h1>Gallery</h1>
-          {data?.Photos && (
+          {Array.isArray(data?.Photos) && data?.Photos && (
             <MultiCarousel
               autoPlay={true}
               infinite={true}
               responsive={responsive}
             >
-              {data?.Photos && data?.Photos?.map((item, index) => {
+              {data?.Photos && Array.isArray(data?.Photos) && data?.Photos?.map((item, index) => {
                 return (
                   <div
                     onClick={() =>{

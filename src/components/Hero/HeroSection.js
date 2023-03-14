@@ -56,10 +56,10 @@ const URL = process.env.BASE_URL || `${origin}`;
                   alignItems: "center",
                 }}
               >
-                {data?.Educations?.length > 0 && data?.Educations?.map((s, index) => (
+                {Array.isArray(data?.Educations) && data?.Educations?.length > 0 && data?.Educations?.map((s, index) => (
                   <div style={{ display: "flex", alignItems: "center" }}>
                     <p style={{ margin: "0rem" }}>{s.Code} </p>
-                    {index == Number(data?.Educations?.length) - 1 ? (
+                    {index == Number(Array.isArray(data?.Educations) && data?.Educations?.length) - 1 ? (
                       ""
                     ) : (
                       <i
@@ -116,11 +116,11 @@ const URL = process.env.BASE_URL || `${origin}`;
             </div>
 
             <div style={{ marginTop: "3rem" }} className="media_links">
-              {data?.MediaLinks?.length > 0 && data?.MediaLinks.map((item) => {
+              {Array.isArray(data?.MediaLinks) && data?.MediaLinks?.length > 0 && data?.MediaLinks?.map((item) => {
                 return (
                   <div className="icon-box">
                     <a href={`https://${item.value}`}>
-                      <i className="fab fa-facebook"></i>
+                      <i className={`fab fa-${item?.key?.toLowerCase()}`}></i>
                     </a>
                   </div>
                 );

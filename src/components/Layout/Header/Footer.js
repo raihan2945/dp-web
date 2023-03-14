@@ -20,11 +20,11 @@ const Footer = ({data}) => {
                         </div>
 
           <div className="facebook" style={{display:"flex",justifyContent:"center", gap:"1rem", alignItems:'center', margin:"2rem 0rem"}}>
-          {data?.MediaLinks.map((item) => {
+          {Array.isArray(data?.MediaLinks) && data?.MediaLinks?.length > 0 && data?.MediaLinks?.map((item) => {
                 return (
                   <div className="icon-box">
                     <a href={`https://${item.value}`}>
-                      <i className="fab fa-facebook"></i>
+                      <i className={`fab fa-${item?.key?.toLowerCase()}`}></i>
                     </a>
                   </div>
                 );

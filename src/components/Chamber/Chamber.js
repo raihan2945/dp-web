@@ -11,7 +11,7 @@ const Chamber = ({ data }) => {
         <div className="chamber" id="chamber">
           <div class="row">
             <h1 className="col-12">Chamber</h1>
-            {data?.Chambers.length > 0 && data?.Chambers?.map((item) => {
+            {Array.isArray(data?.Chambers) && data?.Chambers?.length > 0 && data?.Chambers?.map((item) => {
               return (
                 <div class="col-lg-6" style={{ marginBottom: "1rem" }}>
                   <div
@@ -82,7 +82,7 @@ const Chamber = ({ data }) => {
                           <span style={{ color: "#A3A3AA", fontSize: ".8rem" }}>
                             Available days :
                           </span>{" "}
-                          {item?.AvailableDays.map((day, index) => {
+                          {item?.AvailableDays?.map((day, index) => {
                             return (
                               <span style={{ fontSize: ".8rem" }}>
                                 {index == 0 ? "" : ", "}

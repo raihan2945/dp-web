@@ -7,12 +7,12 @@ const EducationAndTarining = ({ educations, trainings, researchs }) => {
   return (
     <div className="container">
       <div className="eduction-secion" id="eduction-secion">
-        {educations && educations.length > 0 && (
+        {educations && Array.isArray(trainings) && educations.length > 0 && (
           <div className="education" id="eduction">
             <div class="row">
               <h1 className="col-12">Education</h1>
 
-              {educations?.map((item) => {
+              {Array.isArray(educations) && educations?.map((item) => {
                 return (
                   <div class="col-lg-6" style={{ marginBottom: "1.5rem" }}>
                     <div
@@ -116,7 +116,7 @@ const EducationAndTarining = ({ educations, trainings, researchs }) => {
           </div>
         )}
         {/* -----------------------Training----------------- */}
-        {trainings && trainings.length > 0 && (
+        {trainings && Array.isArray(trainings) && trainings.length > 0 && (
           <div className="training" id="training">
             <div class="row">
               <h1 className="col-12">Training</h1>
@@ -194,7 +194,7 @@ const EducationAndTarining = ({ educations, trainings, researchs }) => {
           </div>
         )}
         {/* -----------------------Research Paper----------------- */}
-        {researchs && researchs.length > 0 && (
+        {researchs && Array.isArray(researchs) && researchs.length > 0 && (
           <div className="research-paper" id="research-paper">
             <div class="row">
               <h1 className="col-12">Research Paper</h1>

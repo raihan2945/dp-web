@@ -28,7 +28,7 @@ const VideoGallery = ({ data }) => {
         <h1>Video Gallery</h1>
         {data?.VideoLinks && (
           <Carousel autoPlay={true} infinite={true} responsive={responsive}>
-            {data?.VideoLinks?.length > 0 && data?.VideoLinks?.map((item) => {
+            {Array.isArray(data?.VideoLinks) && data?.VideoLinks?.length > 0 && data?.VideoLinks?.map((item) => {
               return (
                 <div style={{ width: "100%", height: "100%", padding: "1rem" }}>
                   <iframe

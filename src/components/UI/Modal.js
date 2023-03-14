@@ -17,7 +17,7 @@ const ModalUI = (props) => {
       </Modal.Title> */}
       </Modal.Header>
       <Modal.Body>
-        {props?.data?.Chambers.length > 0 && props?.data?.Chambers?.map((item) => {
+        {Array.isArray(props?.data?.Chambers) && props?.data?.Chambers?.length > 0 && props?.data?.Chambers?.map((item) => {
           return (
             <div class="col-lg-12" style={{ marginBottom: "1rem" }}>
               <div
@@ -88,7 +88,7 @@ const ModalUI = (props) => {
                       <span style={{ color: "#A3A3AA", fontSize: ".8rem" }}>
                         Available days :
                       </span>{" "}
-                      {item?.AvailableDays.map((day, index) => {
+                      {item?.AvailableDays?.map((day, index) => {
                         return (
                           <span style={{ fontSize: ".8rem" }}>
                             {index == 0 ? "" : ", "}

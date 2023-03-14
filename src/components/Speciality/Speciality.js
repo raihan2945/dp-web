@@ -8,7 +8,7 @@ const Speciality = ({ data }) => {
           <div class="row">
             <h1 className="col-12">Sub-speciality</h1>
             <div className="col-12 s-speciality-container">
-              {data?.SubSpeciality?.length > 0 && data?.SubSpeciality?.map((item) => {
+              {Array.isArray(data?.SubSpeciality) && data?.SubSpeciality?.length > 0 && data?.SubSpeciality?.map((item) => {
                 return <div className="s-item">{item}</div>;
               })}
             </div>
@@ -16,7 +16,7 @@ const Speciality = ({ data }) => {
           <div class="row" style={{ marginTop: "3rem" }}>
             <h1 className="col-12">Services</h1>
             <div className="col-12 s-speciality-container">
-              {data?.Services?.length > 0 && data?.Services?.map((item) => {
+              {Array.isArray(data?.Services) && data?.Services?.length > 0 && data?.Services?.map((item) => {
                 return <div className="s-item">{item}</div>;
               })}
             </div>
