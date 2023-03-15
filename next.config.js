@@ -22,6 +22,7 @@ const nextConfig = {
   env: {
     BASE_URL: process.env.BASE_URL,
   },
+  assetPrefix: './',
 }
 
 module.exports = nextConfig
