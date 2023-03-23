@@ -19,6 +19,7 @@
     "react-dom": "^18.2.0",
     "react-gallery-carousel": "^0.4.0",
     "react-image-gallery": "^1.2.11",
-    "react-multi-carousel": "^2.8.2"
+    "react-multi-carousel": "^2.8.2",
+    "react-scroll-up": "^1.4.0"
   }
 }

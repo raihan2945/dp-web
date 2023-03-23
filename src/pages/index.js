@@ -1,10 +1,11 @@
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
+import ScrollToTop from "react-scroll-up";
 import AboutUs from "../components/AboutUs/AboutUs";
 import EducationAndTarining from "../components/EducationAndTraining/EducationAndTraining";
 import Experience from "../components/Experience/Experience";
 import HeroSection from "../components/Hero/HeroSection";
 import axios, { all } from "axios";
-import { useEffect, useState } from "react";
 import Chamber from "../components/Chamber/Chamber";
 import Speciality from "../components/Speciality/Speciality";
 import Gallery from "../components/Gallery/Gallery";
@@ -13,11 +14,13 @@ import ContactUs from "../components/ContactUs/ContactUs";
 import Footer from "../components/Layout/Header/Footer";
 import Personal from "../components/Personal/Personal";
 
-
-export default function Home () {
+export default function Home() {
   const [allData, setAllData] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  const [isVisible, setIsVisible] = useState(false);
+  const [height, setHeight] = useState(0)
+  
 
   const getAllData = async () => {
     setLoading(true);
@@ -31,9 +34,37 @@ export default function Home () {
     getAllData();
   }, []);
 
+  useEffect(() => {
+    // 👇️ scroll to top on page load
+    
+  }, []);
+
+
+  useEffect(() => {   
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+
+    window.addEventListener("scroll", listenToScroll);
+    return () => 
+       window.removeEventListener("scroll", listenToScroll); 
+  }, [])
+  
+  const listenToScroll = () => {
+    let heightToHideFrom = 200;
+    const winScroll = document.body.scrollTop || 
+        document.documentElement.scrollTop;
+    setHeight(winScroll);
+
+    if (winScroll > heightToHideFrom) {  
+         setIsVisible(true);
+    } else {
+         setIsVisible(false);
+    }  
+  };
+
+
   return (
     <>
-      <div>
+      <div style={{ backgroundColor: "#F7F8FA" }}>
         <Head>
           <meta name="viewport" content="width=device-width,initial-scale=1" />
           <meta charset="UTF-8" />
@@ -41,10 +72,26 @@ export default function Home () {
           <meta name="description" content="[DP_DOCTOR_DESCRIPTION]" />
           <meta name="keywords" content="[DP_DOCTOR_KEYWORDS]" />
           <meta name="author" content="Digipathy" />
-          <meta property="og:image" content="https://digipathy.com/share.png" data-qmeta="ogImage" />
-          <meta property="og:image:width" content="1200" data-qmeta="ogImageWidth" />
-          <meta property="og:image:height" content="627" data-qmeta="ogImageHeight" />
-          <meta property="fb:app_id" content="1545070339179788" data-qmeta="fbAppId" />
+          <meta
+            property="og:image"
+            content="https://digipathy.com/share.png"
+            data-qmeta="ogImage"
+          />
+          <meta
+            property="og:image:width"
+            content="1200"
+            data-qmeta="ogImageWidth"
+          />
+          <meta
+            property="og:image:height"
+            content="627"
+            data-qmeta="ogImageHeight"
+          />
+          <meta
+            property="fb:app_id"
+            content="1545070339179788"
+            data-qmeta="fbAppId"
+          />
           <link rel="icon" href="/favicon.ico" />
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -76,7 +123,6 @@ export default function Home () {
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
             rel="stylesheet"
           ></link> */}
-
         </Head>
         {loading ? (
           <div
@@ -94,14 +140,11 @@ export default function Home () {
           </div>
         ) : (
           <main>
-
-            {allData &&
-
+            {allData && (
               <section id="hero" className="d-flex align-items-center">
                 <HeroSection data={allData} />
               </section>
-            }
-
+            )}
 
             <header
               className="header-area header-sticky wow slideInDown"
@@ -138,7 +181,6 @@ export default function Home () {
               </div>
             </header>
 
-
             <div
               data-bs-spy="scroll"
               data-bs-target="#navbar-example2"
@@ -147,50 +189,47 @@ export default function Home () {
               tabindex="0"
             >
               <section id="about" className="about-video">
-                {allData?.Bio &&
-                  <AboutUs data={allData} />
-                }
+                {allData?.Bio && <AboutUs data={allData} />}
               </section>
-              {allData?.LifeFamily &&
+              {allData?.LifeFamily && (
                 <section id="personal" className="about-video">
                   <Personal data={allData} />
                 </section>
-              }
-              {allData &&
+              )}
+              {allData && (
                 <section id="education" className="">
-                  <EducationAndTarining educations={allData?.Educations} trainings={allData?.Trainings} researchs={allData?.Researchs} />
+                  <EducationAndTarining
+                    educations={allData?.Educations}
+                    trainings={allData?.Trainings}
+                    researchs={allData?.Researchs}
+                  />
                 </section>
-              }
-              {
-                allData && allData?.Experiences &&
+              )}
+              {allData && allData?.Experiences && (
                 <section id="experience" className="experience">
                   <Experience data={allData} />
                 </section>
-              }
-              {
-                allData && allData?.Chambers &&
+              )}
+              {allData && allData?.Chambers && (
                 <section id="chamber" className="chamber">
                   <Chamber data={allData} />
                 </section>
-              }
-              {
-                allData &&
+              )}
+              {allData && (
                 <section id="speciality" className="speciality">
                   <Speciality data={allData} />
                 </section>
-              }
-              {
-                allData && allData?.Photos &&
+              )}
+              {allData && allData?.Photos && (
                 <section id="gallery" className="gallery">
                   <Gallery data={allData} />
                 </section>
-              }
-              {
-                allData && allData?.VideoLinks &&
+              )}
+              {allData && allData?.VideoLinks && (
                 <section id="video-gallery" className="video-gallery">
                   <VideoGallery data={allData} />
                 </section>
-              }
+              )}
               <section id="contact-us" className="contact-us">
                 <ContactUs data={allData} />
               </section>
@@ -202,13 +241,33 @@ export default function Home () {
         )}
       </div>
 
-      <a
+      {/* <a
         href="#"
         class="back-to-top d-flex align-items-center justify-content-center"
       >
         <i class="fas fa-arrow-up"></i>
-      </a>
-
+      </a> */}
+      {/* 👇️ scroll to top on button click */}
+      <button
+        onClick={() => {
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        }}
+        style={{
+          visibility: isVisible ? "visible": "hidden",
+          position: "fixed",
+          padding: ".3rem .7rem",
+          fontSize: "22px",
+          bottom: "40px",
+          right: "40px",
+          backgroundColor: "#0032B7",
+          color: "#fff",
+          textAlign: "center",
+          border:"none",
+          transition: "1s all"
+        }}
+      >
+        <i class="fas fa-arrow-circle-up"></i>
+      </button>
       {/* ---------------------------------------- */}
       {/* Modal */}
       <div
