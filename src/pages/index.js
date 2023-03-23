@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import ScrollToTop from "react-scroll-up";
 import AboutUs from "../components/AboutUs/AboutUs";
 import EducationAndTarining from "../components/EducationAndTraining/EducationAndTraining";
 import Experience from "../components/Experience/Experience";
