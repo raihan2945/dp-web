@@ -10,6 +10,8 @@ const HeroSection = ({ data }) => {
       ? window.location.origin
       : '';
 
+console.log("data is : ", data)
+
 const URL = process.env.BASE_URL || `${origin}`;
   return (
     <>
@@ -81,14 +83,16 @@ const URL = process.env.BASE_URL || `${origin}`;
 
             <div className="chamber">
               <p>Chamber</p>
-              <h6>Islami Bank Hospital</h6>
               <div className="location-address">
+              <h6>{Array.isArray(data?.Chambers) && data?.Chambers[0]?.Name}</h6>
+              {/* <h6>Islami Bank Hospital</h6> */}
                 <span>
                   <i class="fas fa-map-marker-alt"></i>
                 </span>
                 <span style={{ marginLeft: ".5rem" }}>
-                  Plot-31, Main Road-3, Block-D, Section-11, Mirpur, 1216 Dhaka,
-                  Dhaka, Bangladesh
+                  {/* Plot-31, Main Road-3, Block-D, Section-11, Mirpur, 1216 Dhaka,
+                  Dhaka, Bangladesh */}
+                  {Array.isArray(data?.Chambers) && data?.Chambers[0]?.Address}
                 </span>
               </div>
             </div>
