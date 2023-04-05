@@ -18,8 +18,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
 
   const [isVisible, setIsVisible] = useState(false);
-  const [height, setHeight] = useState(0)
-  
+  const [height, setHeight] = useState(0);
 
   const getAllData = async () => {
     setLoading(true);
@@ -35,31 +34,27 @@ export default function Home() {
 
   useEffect(() => {
     // 👇️ scroll to top on page load
-    
   }, []);
 
-
-  useEffect(() => {   
+  useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 
     window.addEventListener("scroll", listenToScroll);
-    return () => 
-       window.removeEventListener("scroll", listenToScroll); 
-  }, [])
-  
+    return () => window.removeEventListener("scroll", listenToScroll);
+  }, []);
+
   const listenToScroll = () => {
     let heightToHideFrom = 200;
-    const winScroll = document.body.scrollTop || 
-        document.documentElement.scrollTop;
+    const winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
     setHeight(winScroll);
 
-    if (winScroll > heightToHideFrom) {  
-         setIsVisible(true);
+    if (winScroll > heightToHideFrom) {
+      setIsVisible(true);
     } else {
-         setIsVisible(false);
-    }  
+      setIsVisible(false);
+    }
   };
-
 
   return (
     <>
@@ -164,13 +159,21 @@ export default function Home() {
                           </label>
                         </div>
                         <div className="nav-links">
-                          <a href="#about">About doctor</a>
+                          <a href="#about">About Doctor</a>
                           <a href="#education">Education</a>
                           <a href="#experience">Experiences</a>
                           <a href="#chamber">Chamber</a>
                           <a href="#speciality">Speciality & Services</a>
-                          <a href="#gallery">Gallery</a>
-                          <a href="#video-gallery">Video Gallery</a>
+                          {allData &&
+                            Array.isArray(allData?.Photos) &&
+                            allData?.Photos?.length > 0 && (
+                              <a href="#gallery">Gallery</a>
+                            )}
+                          {allData &&
+                            Array.isArray(allData?.VideoLinks) &&
+                            allData?.VideoLinks?.length > 0 && (
+                              <a href="#video-gallery">Video Gallery</a>
+                            )}
                           <a href="#contact">Contact Us</a>
                         </div>
                       </div>
@@ -204,31 +207,40 @@ export default function Home() {
                   />
                 </section>
               )}
-              {allData && allData?.Experiences && (
+              {
+              Array.isArray(allData?.Experiences) &&
+                allData?.Photos?.Experiences > 0 && 
+              (
                 <section id="experience" className="experience">
                   <Experience data={allData} />
                 </section>
               )}
-              {allData && allData?.Chambers && (
-                <section id="chamber" className="chamber">
-                  <Chamber data={allData} />
-                </section>
-              )}
+              {allData &&
+                Array.isArray(allData?.Chambers) &&
+                allData?.Chambers?.length > 0 && (
+                  <section id="chamber" className="chamber">
+                    <Chamber data={allData} />
+                  </section>
+                )}
               {allData && (
                 <section id="speciality" className="speciality">
                   <Speciality data={allData} />
                 </section>
               )}
-              {allData && allData?.Photos && (
-                <section id="gallery" className="gallery">
-                  <Gallery data={allData} />
-                </section>
-              )}
-              {allData && allData?.VideoLinks && (
-                <section id="video-gallery" className="video-gallery">
-                  <VideoGallery data={allData} />
-                </section>
-              )}
+              {allData &&
+                Array.isArray(allData?.Photos) &&
+                allData?.Photos?.length > 0 && (
+                  <section id="gallery" className="gallery">
+                    <Gallery data={allData} />
+                  </section>
+                )}
+              {allData &&
+                Array.isArray(allData?.VideoLinks) &&
+                allData?.VideoLinks?.length > 0 && (
+                  <section id="video-gallery" className="video-gallery">
+                    <VideoGallery data={allData} />
+                  </section>
+                )}
               <section id="contact-us" className="contact-us">
                 <ContactUs data={allData} />
               </section>
@@ -252,7 +264,7 @@ export default function Home() {
           window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
         }}
         style={{
-          visibility: isVisible ? "visible": "hidden",
+          visibility: isVisible ? "visible" : "hidden",
           position: "fixed",
           padding: ".3rem .7rem",
           fontSize: "22px",
@@ -261,8 +273,8 @@ export default function Home() {
           backgroundColor: "#0032B7",
           color: "#fff",
           textAlign: "center",
-          border:"none",
-          transition: "1s all"
+          border: "none",
+          transition: "1s all",
         }}
       >
         <i class="fas fa-arrow-circle-up"></i>

@@ -4,15 +4,15 @@ import Modal from "../UI/Modal";
 
 const HeroSection = ({ data }) => {
   const [modalShow, setModalShow] = useState(false);
-  
+
   const origin =
-  typeof window !== 'undefined' && window.location.origin
+    typeof window !== "undefined" && window.location.origin
       ? window.location.origin
-      : '';
+      : "";
 
-console.log("data is : ", data)
+  console.log("data is : ", data);
 
-const URL = process.env.BASE_URL || `${origin}`;
+  const URL = process.env.BASE_URL || `${origin}`;
   return (
     <>
       <div className="container">
@@ -30,25 +30,32 @@ const URL = process.env.BASE_URL || `${origin}`;
             plus.
           </h2> */}
             <div className="speciality">
-              <div
-                style={{
-                  // fontSize: ".9rem",
-                  // fontWeight: "400",
-                  // marginBottom: "0",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: ".5rem",
-                }}
-              >
-                <div style={{ color: "#FF9201" }}>{data?.Speciality}</div>
-                <i
-                  class="fas fa-circle"
-                  style={{ fontSize: ".3rem", color: "#919399" }}
-                ></i>
-                <div>
-                  {Math.round(data?.YearsOfExperience)}+ years of experience
+              {data?.Speciality && (
+                <div
+                  style={{
+                    // fontSize: ".9rem",
+                    // fontWeight: "400",
+                    // marginBottom: "0",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: ".5rem",
+                  }}
+                >
+                  <div style={{ color: "#FF9201" }}>{data?.Speciality}</div>
+                  <i
+                    class="fas fa-circle"
+                    style={{
+                      fontSize: ".4rem",
+                      color: "#919399",
+                      marginTop: "6px",
+                    }}
+                  ></i>
+                  <div>
+                    {Math.round(data?.YearsOfExperience)}
+                    {data?.YearsOfExperience && "+ years of experience"}
+                  </div>
                 </div>
-              </div>
+              )}
               <div
                 className="edu"
                 style={{
@@ -58,23 +65,30 @@ const URL = process.env.BASE_URL || `${origin}`;
                   alignItems: "center",
                 }}
               >
-                {Array.isArray(data?.Educations) && data?.Educations?.length > 0 && data?.Educations?.map((s, index) => (
-                  <div style={{ display: "flex", alignItems: "center" }}>
-                    <p style={{ margin: "0rem" }}>{s.Code} </p>
-                    {index == Number(Array.isArray(data?.Educations) && data?.Educations?.length) - 1 ? (
-                      ""
-                    ) : (
-                      <i
-                        class="fas fa-circle"
-                        style={{
-                          marginLeft: ".5rem",
-                          fontSize: ".4rem",
-                          color: "#919399",
-                        }}
-                      ></i>
-                    )}
-                  </div>
-                ))}
+                {Array.isArray(data?.Educations) &&
+                  data?.Educations?.length > 0 &&
+                  data?.Educations?.map((s, index) => (
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      <p style={{ margin: "0rem" }}>{s.Code} </p>
+                      {index ==
+                      Number(
+                        Array.isArray(data?.Educations) &&
+                          data?.Educations?.length
+                      ) -
+                        1 ? (
+                        ""
+                      ) : (
+                        <i
+                          class="fas fa-circle"
+                          style={{
+                            marginLeft: ".5rem",
+                            fontSize: ".4rem",
+                            color: "#919399",
+                          }}
+                        ></i>
+                      )}
+                    </div>
+                  ))}
               </div>
               {/* <div className="s-container">
               <div className="s-item">{data?.Speciality}</div>
@@ -84,8 +98,10 @@ const URL = process.env.BASE_URL || `${origin}`;
             <div className="chamber">
               <p>Chamber</p>
               <div className="location-address">
-              <h6>{Array.isArray(data?.Chambers) && data?.Chambers[0]?.Name}</h6>
-              {/* <h6>Islami Bank Hospital</h6> */}
+                <h6>
+                  {Array.isArray(data?.Chambers) && data?.Chambers[0]?.Name}
+                </h6>
+                {/* <h6>Islami Bank Hospital</h6> */}
                 <span>
                   <i class="fas fa-map-marker-alt"></i>
                 </span>
@@ -120,15 +136,17 @@ const URL = process.env.BASE_URL || `${origin}`;
             </div>
 
             <div style={{ marginTop: "3rem" }} className="media_links">
-              {Array.isArray(data?.MediaLinks) && data?.MediaLinks?.length > 0 && data?.MediaLinks?.map((item) => {
-                return (
-                  <div className="icon-box">
-                    <a href={`https://${item.value}`}>
-                      <i className={`fab fa-${item?.key?.toLowerCase()}`}></i>
-                    </a>
-                  </div>
-                );
-              })}
+              {Array.isArray(data?.MediaLinks) &&
+                data?.MediaLinks?.length > 0 &&
+                data?.MediaLinks?.map((item) => {
+                  return (
+                    <div className="icon-box">
+                      <a href={`https://${item.value}`}>
+                        <i className={`fab fa-${item?.key?.toLowerCase()}`}></i>
+                      </a>
+                    </div>
+                  );
+                })}
             </div>
           </div>
           <div
