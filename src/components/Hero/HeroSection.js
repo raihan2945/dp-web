@@ -47,7 +47,7 @@ const HeroSection = ({ data }) => {
                     style={{
                       fontSize: ".4rem",
                       color: "#919399",
-                      marginTop: "6px",
+                      marginTop: "4px",
                     }}
                   ></i>
                   <div>
