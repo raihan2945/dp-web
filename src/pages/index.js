@@ -161,9 +161,21 @@ export default function Home() {
                         <div className="nav-links">
                           <a href="#about">About Doctor</a>
                           <a href="#education">Education</a>
-                          <a href="#experience">Experiences</a>
-                          <a href="#chamber">Chamber</a>
-                          <a href="#speciality">Speciality & Services</a>
+                          {allData &&
+                            Array.isArray(allData?.Experiences) &&
+                            allData?.Experiences?.length > 0 && (
+                              <a href="#experience">Experiences</a>
+                            )}
+                          {allData &&
+                            Array.isArray(allData?.Chambers) &&
+                            allData?.Chambers?.length > 0 && (
+                              <a href="#chamber">Chamber</a>
+                            )}
+                          {allData &&
+                            Array.isArray(allData?.SubSpeciality) &&
+                            allData?.SubSpeciality?.length > 0 && (
+                              <a href="#speciality">Speciality & Services</a>
+                            )}
                           {allData &&
                             Array.isArray(allData?.Photos) &&
                             allData?.Photos?.length > 0 && (
@@ -207,14 +219,12 @@ export default function Home() {
                   />
                 </section>
               )}
-              {
-              Array.isArray(allData?.Experiences) &&
-                allData?.Photos?.Experiences > 0 && 
-              (
-                <section id="experience" className="experience">
-                  <Experience data={allData} />
-                </section>
-              )}
+              {Array.isArray(allData?.Experiences) &&
+                allData?.Experiences?.length > 0 && (
+                  <section id="experience" className="experience">
+                    <Experience data={allData} />
+                  </section>
+                )}
               {allData &&
                 Array.isArray(allData?.Chambers) &&
                 allData?.Chambers?.length > 0 && (
