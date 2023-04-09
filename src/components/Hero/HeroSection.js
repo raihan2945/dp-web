@@ -97,7 +97,7 @@ const HeroSection = ({ data }) => {
             <div className="chamber">
               <p>Chamber</p>
               <div className="location-address">
-                <h6>
+                <h6 style={{color:"#000000"}}>
                   {Array.isArray(data?.Chambers) && data?.Chambers[0]?.Name}
                 </h6>
                 {/* <h6>Islami Bank Hospital</h6> */}
