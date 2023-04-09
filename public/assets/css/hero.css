@@ -157,6 +157,7 @@
     font-weight: 500;
     font-size: 1.1rem;
     border-radius: 5px;
+    flex: 1;
   }
   
   #hero .hero-buttons .button2{
@@ -167,6 +168,7 @@
     font-weight: 500;
     font-size: 1.1rem;
     border-radius: 5px;
+     flex: 1;
   }
   #hero .hero-buttons .button2:hover{
     border: none;
@@ -193,12 +195,12 @@
   @media (max-width: 991px) {
     #hero {
       height: 100%;
-      text-align: center;
+      text-align: left;
       padding-top: 0;
     }
 
     #hero .edu {
-       justify-content: center;
+       justify-content: left;
     }
     
     #hero .container {
@@ -207,7 +209,7 @@
 
     #hero .hero-buttons{
       display: flex;
-      justify-content: center;
+      justify-content: left;
       margin-top: 1.5rem;
     }
 
@@ -231,7 +233,7 @@
 
     #hero .media_links{
       display: flex;
-      justify-content: center;
+      justify-content: left;
     }
   }
   

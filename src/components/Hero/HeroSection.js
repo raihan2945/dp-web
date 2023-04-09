@@ -21,8 +21,8 @@ const HeroSection = ({ data }) => {
             data-aos="fade-up"
             data-aos-delay={200}
           >
-            <h1 className="dr-title">{data?.Title}</h1>
-            <h1 className="dr-title">{data?.Name}</h1>
+            {/* <h1 className="dr-title"></h1> */}
+            <h1 className="dr-title">{data?.Title} {data?.Name}</h1>
             {/* <h2 className="doctor-title">
             I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet
             consectetur adipisicing elit. I don't know, but the flag is a big
