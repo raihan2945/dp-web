@@ -133,93 +133,91 @@ const ModalUI = (props) => {
                         }}
                       >
                         {item?.AppointmentNumber && (
-                           <a
-                           style={{ textDecoration: "none" }}
-                           href={`tel:${item?.AppointmentNumber}`}
-                         >
-
-                          <div
-                            style={{
-                              display: "flex",
-                              gap: ".5rem",
-                              marginTop: ".8rem",
-                              alignItems: "center",
-                            }}
+                          <a
+                            style={{ textDecoration: "none" }}
+                            href={`tel:${item?.AppointmentNumber}`}
                           >
                             <div
                               style={{
-                                backgroundColor: "#F7F7F7",
-                                padding: ".5rem",
-                                borderRadius: "5px",
-                                height: "35px",
-                                width: "35px",
                                 display: "flex",
+                                gap: ".5rem",
+                                marginTop: ".8rem",
                                 alignItems: "center",
-                                justifyContent: "center",
                               }}
                             >
-                              <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div style={{}}>
-                              <p
+                              <div
                                 style={{
-                                  margin: "0",
-                                  fontSize: ".8rem",
-                                  color: "#919399",
+                                  backgroundColor: "#F7F7F7",
+                                  padding: ".5rem",
+                                  borderRadius: "5px",
+                                  height: "35px",
+                                  width: "35px",
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "center",
                                 }}
                               >
-                                Chamber phone number
-                              </p>
-                              <p style={{ margin: "0", fontSize: ".8rem" }}>
-                                {item?.AppointmentNumber}
-                              </p>
+                                <i class="fas fa-phone-alt"></i>
+                              </div>
+                              <div style={{}}>
+                                <p
+                                  style={{
+                                    margin: "0",
+                                    fontSize: ".8rem",
+                                    color: "#919399",
+                                  }}
+                                >
+                                  Chamber phone number
+                                </p>
+                                <p style={{ margin: "0", fontSize: ".8rem" }}>
+                                  {item?.AppointmentNumber}
+                                </p>
+                              </div>
                             </div>
-                          </div>
                           </a>
                         )}
                         {item?.AssistantNumber && (
-                            <a
+                          <a
                             style={{ textDecoration: "none" }}
                             href={`tel:${item?.AssistantNumber}`}
                           >
-
-                          <div
-                            style={{
-                              display: "flex",
-                              gap: ".5rem",
-                              marginTop: ".8rem",
-                              alignItems: "center",
-                            }}
-                          >
                             <div
                               style={{
-                                backgroundColor: "#F7F7F7",
-                                padding: ".5rem",
-                                borderRadius: "5px",
-                                height: "35px",
-                                width: "35px",
                                 display: "flex",
+                                gap: ".5rem",
+                                marginTop: ".8rem",
                                 alignItems: "center",
-                                justifyContent: "center",
                               }}
                             >
-                              <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div style={{}}>
-                              <p
+                              <div
                                 style={{
-                                  margin: "0",
-                                  fontSize: ".8rem",
-                                  color: "#919399",
+                                  backgroundColor: "#F7F7F7",
+                                  padding: ".5rem",
+                                  borderRadius: "5px",
+                                  height: "35px",
+                                  width: "35px",
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "center",
                                 }}
                               >
-                                Assistant
-                              </p>
-                              <p style={{ margin: "0", fontSize: ".8rem" }}>
-                                {item?.AssistantNumber}
-                              </p>
+                                <i class="fas fa-phone-alt"></i>
+                              </div>
+                              <div style={{}}>
+                                <p
+                                  style={{
+                                    margin: "0",
+                                    fontSize: ".8rem",
+                                    color: "#919399",
+                                  }}
+                                >
+                                  Assistant
+                                </p>
+                                <p style={{ margin: "0", fontSize: ".8rem" }}>
+                                  {item?.AssistantNumber}
+                                </p>
+                              </div>
                             </div>
-                          </div>
                           </a>
                         )}
                       </div>
