@@ -140,7 +140,7 @@ const HeroSection = ({ data }) => {
                 data?.MediaLinks?.map((item) => {
                   return (
                     <div className="icon-box">
-                      <a href={`https://${item.value}`}>
+                      <a href={`${item.value}`}>
                         <i className={`fab fa-${item?.key?.toLowerCase()}`}></i>
                       </a>
                     </div>

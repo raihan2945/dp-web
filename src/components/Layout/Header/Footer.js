@@ -23,7 +23,7 @@ const Footer = ({data}) => {
           {Array.isArray(data?.MediaLinks) && data?.MediaLinks?.length > 0 && data?.MediaLinks?.map((item) => {
                 return (
                   <div className="icon-box">
-                    <a style={{color:'white', textDecoration:"none", fontSize:"1rem"}} href={`https://${item.value}`}>
+                    <a style={{color:'white', textDecoration:"none", fontSize:"1rem"}} href={`${item.value}`}>
                       <i className={`fab fa-${item?.key?.toLowerCase()}`}></i>
                     </a>
                   </div>
