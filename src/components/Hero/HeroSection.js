@@ -138,9 +138,18 @@ const HeroSection = ({ data }) => {
               {Array.isArray(data?.MediaLinks) &&
                 data?.MediaLinks?.length > 0 &&
                 data?.MediaLinks?.map((item) => {
+                  let url;
+                if (item?.value.match(/^http?:\/\//i) || item?.value.match(/^https?:\/\//i)) {
+                  url = item?.value
+                }else{
+                  url = "http://" + item?.value;
+                }
+                // if (!item?.value.match(/^http?:\/\//i) || !item?.value.match(/^https?:\/\//i)) {
+                //   url = "http://" + item?.value;
+                // }
                   return (
                     <div className="icon-box">
-                      <a href={`${item.value}`}>
+                      <a href={`${url}`}>
                         <i className={`fab fa-${item?.key?.toLowerCase()}`}></i>
                       </a>
                     </div>
