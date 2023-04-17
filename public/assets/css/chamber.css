@@ -27,4 +27,11 @@
         padding: 2rem;
         margin-top: 2rem;
     }
+    .icon_section{
+        flex-direction: column;
+    }
+    .chamber_phone_numbers{
+        flex-direction: column;
+        gap: 0rem !important;
+    }
   }

@@ -8,12 +8,12 @@ const AboutUs = ({data}) => {
         <div className=" about-doctor">
           <h1>About Myself</h1>
           <div className="row about-text">
-            <div className="col-lg-6" data-aos="fade-left" data-aos-delay={100}>
+            <div className="col-lg-12" data-aos="fade-left" data-aos-delay={100}>
               <p className="">
                 {data?.Bio}
               </p>
             </div>
-            <div
+            {/* <div
               className="col-lg-6"
               data-aos="fade-right"
               data-aos-delay={100}
@@ -25,7 +25,7 @@ const AboutUs = ({data}) => {
                 style={{objectFit:'contain'}}
               />
               
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -28,7 +28,7 @@ const ModalUI = (props) => {
                 }}
                 className="rounded-lg md:mb-0 md:py-[1.4375rem] md:px-5"
               >
-                <div style={{ display: "flex", alignItems:"start", padding:"1.2rem", gap: "1.2rem" }}>
+                <div className="icon_section" style={{ display: "flex", alignItems:"start", padding:"1.2rem", gap: "1.2rem" }}>
                   <div className="mt-1 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-[5px] bg-[#EAEEF9] sm:mr-5 sm:h-11 sm:w-11">
                     <span
                       style={{
@@ -111,7 +111,7 @@ const ModalUI = (props) => {
                         {/* {item.AvailableTime.split("-")[1]} */}
                       </span>
                     </div>
-                    <div style={{display:'flex', justifyContent:"", gap:"2rem"}}>
+                    <div className="chamber_phone_numbers" style={{display:'flex', justifyContent:"", gap:"2rem"}}>
 
                     <div
                       style={{
