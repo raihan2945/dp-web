@@ -45,6 +45,25 @@ const Gallery = ({ data }) => {
     src: `${URL}/${item}`,
   }));
 
+  const CustomRightArrow = ({ onClick, ...rest }) => {
+    const {
+      onMove,
+      carouselState: { currentSlide, deviceType }
+    } = rest;
+    // onMove means if dragging or swiping in progress.
+    return <button style={{fontSize:"2rem", color:"black"}} onClick={() => onClick() } >Hello</button>;
+  };
+
+  const CustomButtonGroup = ({ next, previous }) => {
+    return (
+
+        <button onClick={next} style={{ backgroundColor: 'green', color: 'white' }}>
+          Right Arrow
+        </button>
+
+    );
+  };
+
   return (
     <>
       <div className="container">
@@ -55,6 +74,7 @@ const Gallery = ({ data }) => {
               autoPlay={true}
               infinite={true}
               responsive={responsive}
+              removeArrowOnDeviceType={[]}
             >
               {data?.Photos && Array.isArray(data?.Photos) && data?.Photos?.map((item, index) => {
                 return (
