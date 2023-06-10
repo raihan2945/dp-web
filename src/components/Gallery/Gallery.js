@@ -19,6 +19,7 @@ const Gallery = ({ data }) => {
 
     const URL = process.env.BASE_URL || `${origin}`;
     // console.log("url -", URL)
+    
 
   const responsive = {
     superLargeDesktop: {
