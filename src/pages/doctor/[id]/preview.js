@@ -12,6 +12,7 @@ import VideoGallery from "../../../components/VideoGallery/VideoGallery";
 import ContactUs from "../../../components/ContactUs/ContactUs";
 import Footer from "../../../components/Layout/Header/Footer";
 import Personal from "../../../components/Personal/Personal";
+import BlogFeeds from "../../../components/BlogFeeds/BlogFeeds";
 
 export default function Home () {
   const [allData, setAllData] = useState(null);
@@ -213,6 +214,12 @@ export default function Home () {
                 allData && allData?.VideoLinks &&
                 <section id="video-gallery" className="video-gallery">
                   <VideoGallery data={allData} />
+                </section>
+              }
+              {
+                allData && allData?.BlogFeeds &&
+                <section id="blog-feeds" className="blog-feeds">
+                  <BlogFeeds data={allData} />
                 </section>
               }
               <section id="contact-us" className="contact-us">

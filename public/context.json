@@ -7,12 +7,24 @@
   "LifeFamily": "",
   "ProfileImage": "res/user/07142022/e5efc5220fe4d04ebc081e8093f2d9b723b8.1024.jpg",
   "MediaLinks": [
-    { "key": "Facebook", "value": "www.facebook.com/mosleh.uddin.969" }
+    {
+      "key": "Facebook",
+      "value": "www.facebook.com/mosleh.uddin.969"
+    }
   ],
   "VideoLinks": [
-    { "key": "youtube", "value": "https://youtu.be/FjOxLLFIPm8" },
-    { "key": "Youtube", "value": "https://youtu.be/FjOxLLFIPm8" },
-    { "key": "Youtube", "value": "https://youtu.be/FjOxLLFIPm8" }
+    {
+      "key": "youtube",
+      "value": "https://youtu.be/FjOxLLFIPm8"
+    },
+    {
+      "key": "Youtube",
+      "value": "https://youtu.be/FjOxLLFIPm8"
+    },
+    {
+      "key": "Youtube",
+      "value": "https://youtu.be/FjOxLLFIPm8"
+    }
   ],
   "Photos": [
     "res/user/05102022/f697c3d57394e74fbe7b3117dc012b03dd21.jpg",
@@ -196,7 +208,14 @@
     {
       "Name": "Islami Bank Hospital",
       "Address": "Plot-31, Main Road-3, Block-D, Section-11, Mirpur, 1216 Dhaka, Dhaka, Bangladesh",
-      "AvailableDays": ["sat", "sun", "mon", "tue", "wed", "thu"],
+      "AvailableDays": [
+        "sat",
+        "sun",
+        "mon",
+        "tue",
+        "wed",
+        "thu"
+      ],
       "AvailableTime": "17:00 - 19:00",
       "AppointmentNumber": "01810000118",
       "AssistantNumber": ""
@@ -204,10 +223,171 @@
     {
       "Name": "Siraj Khaleda General Hospital",
       "Address": "Opposite to Post Office, Dhaka Cantonment",
-      "AvailableDays": ["sat", "sun", "mon", "tue", "wed", "thu", "fri"],
+      "AvailableDays": [
+        "sat",
+        "sun",
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
       "AvailableTime": "19:30 - 21:30",
       "AppointmentNumber": "01302897580",
       "AssistantNumber": ""
+    }
+  ],
+  "BlogFeeds": [
+    {
+      "Title": "",
+      "Content": "What do you think? 🤔🤔🤔",
+      "PostType": "poll",
+      "Tags": [
+        "tag 1",
+        "tag 2"
+      ],
+      "CreatedAt": 1679063045,
+      "SharedPost": null,
+      "Poll": {
+        "Title": "Which one is the best pharmaceutical company of Bangladesh in terms of product quality❓",
+        "TotalVoted": 20,
+        "Options": [
+          {
+            "Value": "Square",
+            "TotalVoted": 1
+          },
+          {
+            "Value": "Radiant",
+            "TotalVoted": 10
+          },
+          {
+            "Value": "Incepta",
+            "TotalVoted": 2
+          },
+          {
+            "Value": "ACI",
+            "TotalVoted": 5
+          },
+          {
+            "Value": "Renata",
+            "TotalVoted": 0
+          },
+          {
+            "Value": "Beximco",
+            "TotalVoted": 2
+          }
+        ]
+      },
+      "Images": null,
+      "Videos": null,
+      "Documents": null,
+      "TotalLiked": 0,
+      "TotalShared": 0,
+      "TotalComment": 2,
+      "TotalReported": 0,
+      "TotalSaved": 0
+    },
+    {
+      "Title": "",
+      "Content": "Coronavirus disease (COVID-19) is an infectious disease caused by the SARS-CoV-2 virus.\n\nMost people infected with the virus will experience mild to moderate respiratory illness and recover without requiring special treatment. However, some will become seriously ill and require medical attention. Older people and those with underlying medical conditions like cardiovascular disease, diabetes, chronic respiratory disease, or cancer are more likely to develop serious illness. Anyone can get sick with COVID-19 and become seriously ill or die at any age. \n\nThe best way to prevent and slow down transmission is to be well informed about the disease and how the virus spreads. Protect yourself and others from infection by staying at least 1 metre apart from others, wearing a properly fitted mask, and washing your hands or using an alcohol-based rub frequently. Get vaccinated when it’s your turn and follow local guidance.",
+      "PostType": "normal",
+      "Tags": [
+        "tag 1",
+        "tag 2"
+      ],
+      "CreatedAt": 1679062764,
+      "SharedPost": null,
+      "Poll": null,
+      "Images": [
+        {
+          "FileURL": "https://api.digipathy.com/res/blog/images/d858922776f5c74ade79e27756a8d891c053_ea2095c4658d6647fa6a95f6b4cbcf0752f8_1690605280.jpg",
+          "FullName": "d858922776f5c74ade79e27756a8d891c053_ea2095c4658d6647fa6a95f6b4cbcf0752f8_1690605280.jpg"
+        },
+        {
+          "FileURL": "https://api.digipathy.com/res/blog/images/eb79609a260ec24d5b2ab4d2a8ee7a201702_6b603820387e534496392a23dd1ce3458667_1690605280.jpg",
+          "FullName": "eb79609a260ec24d5b2ab4d2a8ee7a201702_6b603820387e534496392a23dd1ce3458667_1690605280.jpg"
+        },
+        {
+          "FileURL": "https://api.digipathy.com/res/blog/images/18e4ef200b6df04cb30b7540d371b94a779e_505de12b0fe84040be08e80007aab2906773_1690605280.jpg",
+          "FullName": "18e4ef200b6df04cb30b7540d371b94a779e_505de12b0fe84040be08e80007aab2906773_1690605280.jpg"
+        },
+        {
+          "FileURL": "https://api.digipathy.com/res/blog/images/a81266cb954309411399b079a973599adf16_e37b8e8e2ccf0248622bd5b2918d9992b2cf_1690605280.jpg",
+          "FullName": "a81266cb954309411399b079a973599adf16_e37b8e8e2ccf0248622bd5b2918d9992b2cf_1690605280.jpg"
+        },
+        {
+          "FileURL": "https://api.digipathy.com/res/blog/images/ff1de6a08f23d842988a857886209e76a4a0_dbbbcefa815fe8467c88d4d890d0be75ffb7_1690605280.jpg",
+          "FullName": "ff1de6a08f23d842988a857886209e76a4a0_dbbbcefa815fe8467c88d4d890d0be75ffb7_1690605280.jpg"
+        }
+      ],
+      "Videos": null,
+      "Documents": null,
+      "TotalLiked": 1,
+      "TotalShared": 1,
+      "TotalComment": 0,
+      "TotalReported": 0,
+      "TotalSaved": 0
+    },
+    {
+      "Title": "",
+      "Content": "This new mechanical keyboard is lit 🔥🔥🔥",
+      "PostType": "normal",
+      "Tags": null,
+      "CreatedAt": 1690605128,
+      "SharedPost": null,
+      "Poll": null,
+      "Images": null,
+      "Videos": [
+        {
+          "FileURL": "https://api.digipathy.com/res/blog/videos/76d657344ecf344ec44b075474a63425c95e_c86a3c9f7299874bd37824e7bc0943e49686_1690605127.mp4",
+          "FullName": "76d657344ecf344ec44b075474a63425c95e_c86a3c9f7299874bd37824e7bc0943e49686_1690605127.mp4"
+        }
+      ],
+      "Documents": null,
+      "TotalLiked": 0,
+      "TotalShared": 0,
+      "TotalComment": 0,
+      "TotalReported": 0,
+      "TotalSaved": 0
+    },
+    {
+      "Title": "",
+      "Content": "নৃতাত্ত্বিকরা বেশিরভাগ পারিবারিক সংস্থাকে ম্যাট্রিফোকাল (একজন মা এবং তার সন্তানেরা), প্যাট্রিফোকাল (একজন পিতা এবং তার সন্তানদের), দাম্পত্য (একজন স্ত্রী, তার স্বামী এবং সন্তানদের, যাকে পারমাণবিক পরিবারও বলা হয় ), আভানকুলার (একজন পুরুষ, তার বোন, এবং তার সন্তানরা), বা বর্ধিত (বাবা-মা এবং সন্তানদের ছাড়াও, দাদা-দাদি, খালা, চাচা, বা কাজিন অন্তর্ভুক্ত হতে পারে)।\n\nবংশবৃত্তান্তের ক্ষেত্রটির লক্ষ্য ইতিহাসের মাধ্যমে পারিবারিক বংশের সন্ধান করা। পরিবারও একটি গুরুত্বপূর্ণ অর্থনৈতিক ইউনিট যা পারিবারিক অর্থনীতিতে অধ্যয়ন করা হয় । \"পরিবার\" শব্দটি রূপকভাবে ব্যবহার করা যেতে পারে আরও অন্তর্ভুক্তিমূলক বিভাগ তৈরি করতে যেমন সম্প্রদায় , জাতিসত্তা , এবং বিশ্ব গ্রাম ।",
+      "PostType": "normal",
+      "Tags": null,
+      "CreatedAt": 1690604935,
+      "SharedPost": null,
+      "Poll": null,
+      "Images": null,
+      "Videos": null,
+      "Documents": null,
+      "TotalLiked": 0,
+      "TotalShared": 0,
+      "TotalComment": 0,
+      "TotalReported": 0,
+      "TotalSaved": 0
+    },
+    {
+      "Title": "",
+      "Content": "Eat and drink healthy 🍹",
+      "PostType": "normal",
+      "Tags": null,
+      "CreatedAt": 1690516489,
+      "SharedPost": null,
+      "Poll": null,
+      "Images": [
+        {
+          "FileURL": "https://api.digipathy.com/res/blog/images/44e41e0b02145045840afa70da280bb8cbeb_de7d7ab829e1224651280782e75362f89164_1690516487.jpg",
+          "FullName": "44e41e0b02145045840afa70da280bb8cbeb_de7d7ab829e1224651280782e75362f89164_1690516487.jpg"
+        }
+      ],
+      "Videos": null,
+      "Documents": null,
+      "TotalLiked": 0,
+      "TotalShared": 0,
+      "TotalComment": 0,
+      "TotalReported": 0,
+      "TotalSaved": 0
     }
   ],
   "Services": [
