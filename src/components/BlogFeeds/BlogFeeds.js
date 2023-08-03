@@ -7,7 +7,7 @@ const BlogFeedItem = ({ item }) => {
   if (item.PostType === 'normal') {
     return (
       <div class="card">
-        {(item.Images || item.Videos || item.Documents) && (
+        {(item?.Images || item?.Videos || item?.Documents) && (
           <div class="card__header">
             <Carousel
               additionalTransfrom={0}
@@ -54,8 +54,8 @@ const BlogFeedItem = ({ item }) => {
               renderDotsOutside={false}
             >
 
-              {item.Images?.length > 0 &&
-                item.Images?.map((file, index) => {
+              {item?.Images?.length > 0 &&
+                item?.Images?.map((file, index) => {
                   return (
                     <img key={index}
                       alt={file?.FullName}
@@ -66,8 +66,8 @@ const BlogFeedItem = ({ item }) => {
                   );
                 })}
 
-              {item.Videos?.length > 0 &&
-                item.Videos?.map((file, index) => {
+              {item?.Videos?.length > 0 &&
+                item?.Videos?.map((file, index) => {
                   return (
                     <video key={index}
                       height={210}
@@ -97,7 +97,7 @@ const BlogFeedItem = ({ item }) => {
         </div>
         <div class="card__footer">
           <div class="tag-container">
-            {item.Tags && item?.Tags?.map((tag, index) => {
+            {item?.Tags && item?.Tags?.map((tag, index) => {
               return (
                 <span key={index} class="tag tag-blue">{tag}</span>
               );
@@ -117,11 +117,11 @@ const BlogFeedItem = ({ item }) => {
     return (
       <div class="card">
         <div class="card__header content_padding">
-          {item.Title && (
-            <h4>{item.Title}</h4>
+          {item?.Title && (
+            <h4>{item?.Title}</h4>
           )}
-          {item.Content && (
-            <p>{item.Content}</p>
+          {item?.Content && (
+            <p>{item?.Content}</p>
           )}
         </div>
         <div class="card__body poll-bg ">
@@ -145,13 +145,13 @@ const BlogFeedItem = ({ item }) => {
         </div>
         <div class="card__footer">
           <div class="tag-container">
-            {item.Tags && item.Tags?.map((tag, index) => {
+            {item?.Tags && item?.Tags?.map((tag, index) => {
               return (
                 <span key={index} class="tag tag-blue">{tag}</span>
               );
             })}
           </div>
-          <p class="time">{moment(item.CreatedAt * 1000).fromNow()}</p>
+          <p class="time">{moment(item?.CreatedAt * 1000).fromNow()}</p>
         </div>
       </div>
     )

@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
+import AboutUs from "../components/AboutUs/AboutUs";
+import EducationAndTarining from "../components/EducationAndTraining/EducationAndTraining";
+import Experience from "../components/Experience/Experience";
 import HeroSection from "../components/Hero/HeroSection";
 import axios, { all } from "axios";
+import Chamber from "../components/Chamber/Chamber";
+import Speciality from "../components/Speciality/Speciality";
+import Gallery from "../components/Gallery/Gallery";
+import VideoGallery from "../components/VideoGallery/VideoGallery";
 import ContactUs from "../components/ContactUs/ContactUs";
 import Footer from "../components/Layout/Header/Footer";
+import Personal from "../components/Personal/Personal";
 import BlogFeeds from "../components/BlogFeeds/BlogFeeds";
-import Link from "next/link"
 
 export default function Home () {
   const [allData, setAllData] = useState(null);
@@ -148,39 +155,39 @@ export default function Home () {
                           </label>
                         </div>
                         <div className="nav-links">
-                          <Link href="/#about">About Doctor</Link>
-                          <Link href="/#education">Education</Link>
+                          <a href="/#about">About Doctor</a>
+                          <a href="/#education">Education</a>
                           {allData &&
                             Array.isArray(allData?.Experiences) &&
                             allData?.Experiences?.length > 0 && (
-                              <Link href="/#experience">Experiences</Link>
+                              <a href="/#experience">Experiences</a>
                             )}
                           {allData &&
                             Array.isArray(allData?.Chambers) &&
                             allData?.Chambers?.length > 0 && (
-                              <Link href="/#chamber">Chamber</Link>
+                              <a href="/#chamber">Chamber</a>
                             )}
                           {allData &&
                             Array.isArray(allData?.SubSpeciality) &&
                             allData?.SubSpeciality?.length > 0 && (
-                              <Link href="/#speciality">Speciality & Services</Link>
+                              <a href="/#speciality">Speciality & Services</a>
                             )}
                           {allData &&
                             Array.isArray(allData?.Photos) &&
                             allData?.Photos?.length > 0 && (
-                              <Link href="/#gallery">Gallery</Link>
+                              <a href="/#gallery">Gallery</a>
                             )}
                           {allData &&
                             Array.isArray(allData?.VideoLinks) &&
                             allData?.VideoLinks?.length > 0 && (
-                              <Link href="/#video-gallery">Video Gallery</Link>
+                              <a href="/#video-gallery">Video Gallery</a>
                             )}
                           {allData &&
                             Array.isArray(allData?.BlogFeeds) &&
                             allData?.BlogFeeds?.length > 0 && (
-                              <Link href="#blog-feeds">Blog Feeds</Link>
+                              <a href="#blog-feeds">Blog Feeds</a>
                             )}
-                          <Link href="/#contact">Contact Us</Link>
+                          <a href="/#contact">Contact Us</a>
                         </div>
                       </div>
                     </nav>
