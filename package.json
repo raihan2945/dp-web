@@ -21,9 +21,5 @@
     "react-gallery-carousel": "^0.4.0",
     "react-image-gallery": "^1.2.11",
     "react-multi-carousel": "^2.8.2"
-  },
-  "devDependencies": {
-    "eslint": "8.46.0",
-    "eslint-config-next": "13.4.12"
   }
 }

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import HeroSection from "../components/Hero/HeroSection";
+import HeroSection from "../../../components/Hero/HeroSection";
 import axios, { all } from "axios";
-import ContactUs from "../components/ContactUs/ContactUs";
-import Footer from "../components/Layout/Header/Footer";
-import BlogFeeds from "../components/BlogFeeds/BlogFeeds";
+import { useEffect, useState } from "react";
+import ContactUs from "../../../components/ContactUs/ContactUs";
+import Footer from "../../../components/Layout/Header/Footer";
+import BlogFeeds from "../../../components/BlogFeeds/BlogFeeds";
 import Link from "next/link"
 
 export default function Home () {
