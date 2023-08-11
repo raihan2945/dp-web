@@ -10,7 +10,7 @@ const HeroSection = ({ data }) => {
       ? window.location.origin
       : "";
 
-      console.log("data is : ", data)
+      // console.log("data is : ", data)
 
   const URL = process.env.BASE_URL || `${origin}`;
   return (

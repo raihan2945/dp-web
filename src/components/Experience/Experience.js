@@ -1,24 +1,60 @@
 import React from "react";
 import moment from "moment";
 
-const Experience = ({data}) => {
+function parseCustomDate(dateString) {
+  const [day, month, year] = dateString.split("/").map(Number);
+
+  // Month in JavaScript Date is 0-indexed, so subtract 1 from the month
+  const dateObject = new Date(year, month - 1, day);
+
+  return dateObject;
+}
+
+const getYear = (date) => {
+  return moment(new Date(parseCustomDate(date))).year();
+};
+
+const Experience = ({ data }) => {
+  let experiences = Array.isArray(data?.Experiences) && data?.Experiences;
+
+  // console.log("experiences is : ", experiences);
+
+  experiences.sort(
+    (a, b) => parseInt(getYear(a.From)) - parseInt(getYear(b.From))
+  );
+
   return (
     <div className="container">
       <div className="experience-secion" id="experience-secion">
         <div className="experience" id="experience">
           <div class="row">
             <h1 className="col-12">Working Experience</h1>
-            {Array.isArray(data?.Experiences) && data?.Experiences?.map(item=>{
-                return(
-                    <div class="col-lg-6" style={{ marginBottom: "1rem" }}>
+            {experiences?.map((item) => {
+              return (
+                <div class="col-lg-6" style={{ marginBottom: "1rem" }}>
+                  <div
+                    style={{
+                      borderRadius: "5px",
+                      border: "1px solid #F0F0F2",
+                    }}
+                    className="rounded-lg md:mb-0 md:py-[1.4375rem] md:px-5"
+                  >
                     <div
-                      style={{ borderRadius: "5px", border:'1px solid #F0F0F2'}}
-                      className="rounded-lg md:mb-0 md:py-[1.4375rem] md:px-5"
+                      style={{
+                        display: "flex",
+                        alignItems: "start",
+                        padding: "1.2rem",
+                        gap: "1.2rem",
+                      }}
                     >
-                      <div style={{ display: "flex", alignItems:"start", padding:"1.2rem", gap: "1.2rem" }}>
-                        <div className="mr-3 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-[5px] bg-[#EAEEF9] sm:mr-5 sm:h-11 sm:w-11">
-                        <span style={{background:"#EAEEF9", padding:".7rem .5rem", borderRadius:"5px"}}>
-
+                      <div className="mr-3 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-[5px] bg-[#EAEEF9] sm:mr-5 sm:h-11 sm:w-11">
+                        <span
+                          style={{
+                            background: "#EAEEF9",
+                            padding: ".7rem .5rem",
+                            borderRadius: "5px",
+                          }}
+                        >
                           <svg
                             width="24"
                             height="24"
@@ -34,27 +70,37 @@ const Experience = ({data}) => {
                             ></path>
                           </svg>
                         </span>
-                        </div>
-                        <div>
-                          <h6 className="designation">
-                            {item.Designation}
-                          </h6>
-                          <p className="institute" style={{fontSize:".8rem"}}>{item.Institution}</p>
-                          <div className="date-and-time" style={{}}>
-                            <span className="mt-1 font-normal text-xs" style={{fontSize:".8rem"}}>
+                      </div>
+                      <div>
+                        <h6 className="designation">{item.Designation}</h6>
+                        <p className="institute" style={{ fontSize: ".8rem" }}>
+                          {item.Institution}
+                        </p>
+                        <div className="date-and-time" style={{}}>
+                          <span
+                            className="mt-1 font-normal text-xs"
+                            style={{ fontSize: ".8rem" }}
+                          >
                             {/* moment(testDate,'mm/dd/yyyy'); */}
-                             {/* {`${new Date(item?.From)}`} - {item.Current == true ? "Current" : item.To} */}
-                             {`${moment(new Date(item?.From)).format("MMMM DD, YYYY")}`} - {item.Current == true ? "Current" : `${moment(new Date(item?.From)).format("MMMM DD, YYYY")}`}
-                             {/* {item.From} - {item.Current == true ? "Current" : item.To} */}
-                            </span>
-                          </div>
+                            {/* {`${new Date(item?.From)}`} - {item.Current == true ? "Current" : item.To} */}
+                            {`${moment(
+                              new Date(parseCustomDate(item?.From))
+                            ).format("MMMM DD, YYYY")}`}{" "}
+                            -{" "}
+                            {item.Current == true
+                              ? "Current"
+                              : `${moment(
+                                  new Date(parseCustomDate(item?.To))
+                                ).format("MMMM DD, YYYY")}`}
+                            {/* {item.From} - {item.Current == true ? "Current" : item.To} */}
+                          </span>
                         </div>
                       </div>
                     </div>
                   </div>
-                )
+                </div>
+              );
             })}
-
           </div>
         </div>
       </div>
