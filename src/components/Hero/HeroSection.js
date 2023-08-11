@@ -10,6 +10,7 @@ const HeroSection = ({ data }) => {
       ? window.location.origin
       : "";
 
+      console.log("data is : ", data)
 
   const URL = process.env.BASE_URL || `${origin}`;
   return (
@@ -22,14 +23,43 @@ const HeroSection = ({ data }) => {
             data-aos-delay={200}
           >
             {/* <h1 className="dr-title"></h1> */}
-            <h1 className="dr-title">{data?.Title} {data?.Name}</h1>
+            <h1 className="dr-title">
+              {data?.Title} {data?.Name}
+            </h1>
             {/* <h2 className="doctor-title">
             I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet
             consectetur adipisicing elit. I don't know, but the flag is a big
             plus.
           </h2> */}
             <div className="speciality">
-              {data?.Speciality && (
+              {data?.Specialities ? (
+                <div
+                  style={{
+                    // fontSize: ".9rem",
+                    // fontWeight: "400",
+                    // marginBottom: "0",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: ".5rem",
+                  }}
+                >
+                  <div style={{ color: "#FF9201" }}>{data?.Specialities.map((s,i)=>{
+                    return `${i==0 ?"":", "}${s}`
+                    })}</div>
+                  <i
+                    class="fas fa-circle"
+                    style={{
+                      fontSize: ".4rem",
+                      color: "#919399",
+                      marginTop: "4px",
+                    }}
+                  ></i>
+                  <div>
+                    {Math.round(data?.YearsOfExperience)}
+                    {data?.YearsOfExperience && "+ years of experience"}
+                  </div>
+                </div>
+              ) : (
                 <div
                   style={{
                     // fontSize: ".9rem",
@@ -97,7 +127,7 @@ const HeroSection = ({ data }) => {
             <div className="chamber">
               <p>Chamber</p>
               <div className="location-address">
-                <h6 style={{color:"#000000"}}>
+                <h6 style={{ color: "#000000" }}>
                   {Array.isArray(data?.Chambers) && data?.Chambers[0]?.Name}
                 </h6>
                 {/* <h6>Islami Bank Hospital</h6> */}
@@ -139,14 +169,17 @@ const HeroSection = ({ data }) => {
                 data?.MediaLinks?.length > 0 &&
                 data?.MediaLinks?.map((item) => {
                   let url;
-                if (item?.value.match(/^http?:\/\//i) || item?.value.match(/^https?:\/\//i)) {
-                  url = item?.value
-                }else{
-                  url = "http://" + item?.value;
-                }
-                // if (!item?.value.match(/^http?:\/\//i) || !item?.value.match(/^https?:\/\//i)) {
-                //   url = "http://" + item?.value;
-                // }
+                  if (
+                    item?.value.match(/^http?:\/\//i) ||
+                    item?.value.match(/^https?:\/\//i)
+                  ) {
+                    url = item?.value;
+                  } else {
+                    url = "http://" + item?.value;
+                  }
+                  // if (!item?.value.match(/^http?:\/\//i) || !item?.value.match(/^https?:\/\//i)) {
+                  //   url = "http://" + item?.value;
+                  // }
                   return (
                     <div className="icon-box">
                       <a href={`${url}`}>
