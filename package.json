@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@egjs/react-grid": "^1.15.1",
     "axios": "^1.2.1",
     "bootstrap": "^5.2.3",
     "moment": "^2.29.4",
