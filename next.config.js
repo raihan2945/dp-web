@@ -14,6 +14,7 @@ const nextConfig = {
   ) {
     return {
       '/': { page: '/' },
+      '/feeds': { page: '/feeds' },
     }
   },
   images: {
