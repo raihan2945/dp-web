@@ -66,37 +66,37 @@
   "Memberships": [],
   "Educations": [
     {
-      "Name": "FCPS (Hematology)",
-      "Code": "FCPS (Hematology)",
-      "Country": "Bangladesh",
-      "Year": "2003",
-      "Institution": "Bangladesh College of Physicians and Surgeons",
-      "Sector": ""
-    },
-    {
-      "Name": "Bachelor of Medicine and Bachelor of Surgery",
-      "Code": "MBBS",
-      "Country": "Bangladesh",
-      "Year": "1991",
-      "Institution": "Chittagong Medical College",
-      "Sector": ""
-    },
-    {
-      "Name": "DCP",
-      "Code": "DCP",
-      "Country": "Bangladesh",
-      "Year": "2002",
-      "Institution": "Dhaka University",
-      "Sector": ""
-    },
-    {
-      "Name": "Membership of the College of Bangladesh and Surgeons",
-      "Code": "MCPS",
-      "Country": "Bangladesh",
-      "Year": "1997",
-      "Institution": "Bangladesh College of Physicians and Surgeons",
-      "Sector": ""
-    }
+      "Name":"Bachelor of Medicine and Bachelor of Surgery ( MBBS )",
+      "Code":"MBBS ( Dhaka )",
+      "Country":"BGD",
+      "Year":"1995",
+      "Institution":"Sher-E-Bangla Medical College",
+      "Sector":"Cardiology"
+   },
+   {
+      "Name":"Doctor of Medicine ( MD )",
+      "Code":"MD ( Cardiology )",
+      "Country":"BGD",
+      "Year":"2012",
+      "Institution":"National Institute of Cardiovascular Diseases",
+      "Sector":""
+   },
+   {
+      "Name":"Membership of the Royal College of Physicians and Surgeons of Glasgow ( MRCPS )",
+      "Code":"MRCPS ( Glasgow, UK )",
+      "Country":"GBR",
+      "Year":"2014",
+      "Institution":"University of Glasgow ",
+      "Sector":""
+   },
+   {
+      "Name":"Fellow of the Society for Cardiovascular Angiography and Interventions ( FSCAI )",
+      "Code":"FSCAI ( USA )",
+      "Country":"USA",
+      "Year":"2016",
+      "Institution":"Mayo Clinic College of Medicine and Science ",
+      "Sector":"Cardiology"
+   }
   ],
   "Trainings": [
     {

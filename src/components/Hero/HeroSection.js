@@ -10,7 +10,7 @@ const HeroSection = ({ data }) => {
       ? window.location.origin
       : "";
 
-      // console.log("data is : ", data)
+  // console.log("data is : ", data)
 
   const URL = process.env.BASE_URL || `${origin}`;
   return (
@@ -43,9 +43,11 @@ const HeroSection = ({ data }) => {
                     gap: ".5rem",
                   }}
                 >
-                  <div style={{ color: "#FF9201" }}>{data?.Specialities.map((s,i)=>{
-                    return `${i==0 ?"":", "}${s}`
-                    })}</div>
+                  <div style={{ color: "#FF9201" }}>
+                    {data?.Specialities.map((s, i) => {
+                      return `${i == 0 ? "" : ", "}${s}`;
+                    })}
+                  </div>
                   <i
                     class="fas fa-circle"
                     style={{
@@ -79,7 +81,7 @@ const HeroSection = ({ data }) => {
                       marginTop: "4px",
                     }}
                   ></i>
-                  <div>
+                  <div style={{width:"max-content"}}>
                     {Math.round(data?.YearsOfExperience)}
                     {data?.YearsOfExperience && "+ years of experience"}
                   </div>
@@ -92,13 +94,25 @@ const HeroSection = ({ data }) => {
                   display: "flex",
                   gap: ".5rem",
                   alignItems: "center",
+                  flexWrap:"wrap",
+                  marginTop:"1rem"
                 }}
               >
                 {Array.isArray(data?.Educations) &&
                   data?.Educations?.length > 0 &&
                   data?.Educations?.map((s, index) => (
                     <div style={{ display: "flex", alignItems: "center" }}>
-                      <p style={{ margin: "0rem" }}>{s.Code} </p>
+                      {/* {index !== 0 &&
+                      <i
+                        class="fas fa-circle"
+                        style={{
+                          marginRight: ".5rem",
+                          fontSize: ".4rem",
+                          color: "#919399",
+                        }}
+                      ></i>
+                      } */}
+                      <p style={{ margin: "0rem", width:"max-content" }}>{s.Code} </p>
                       {index ==
                       Number(
                         Array.isArray(data?.Educations) &&
