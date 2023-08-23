@@ -13,7 +13,7 @@ import ContactUs from "../components/ContactUs/ContactUs";
 import Footer from "../components/Layout/Header/Footer";
 import Personal from "../components/Personal/Personal";
 
-export default function Home () {
+export default function Home() {
   const [allData, setAllData] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -45,8 +45,7 @@ export default function Home () {
 
   const listenToScroll = () => {
     let heightToHideFrom = 200;
-    const winScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     setHeight(winScroll);
 
     if (winScroll > heightToHideFrom) {
@@ -66,26 +65,10 @@ export default function Home () {
           <meta name="description" content="[DP_DOCTOR_DESCRIPTION]" />
           <meta name="keywords" content="[DP_DOCTOR_KEYWORDS]" />
           <meta name="author" content="Digipathy" />
-          <meta
-            property="og:image"
-            content="https://digipathy.com/share.png"
-            data-qmeta="ogImage"
-          />
-          <meta
-            property="og:image:width"
-            content="1200"
-            data-qmeta="ogImageWidth"
-          />
-          <meta
-            property="og:image:height"
-            content="627"
-            data-qmeta="ogImageHeight"
-          />
-          <meta
-            property="fb:app_id"
-            content="1545070339179788"
-            data-qmeta="fbAppId"
-          />
+          <meta property="og:image" content="https://digipathy.com/share.png" data-qmeta="ogImage" />
+          <meta property="og:image:width" content="1200" data-qmeta="ogImageWidth" />
+          <meta property="og:image:height" content="627" data-qmeta="ogImageHeight" />
+          <meta property="fb:app_id" content="1545070339179788" data-qmeta="fbAppId" />
           <link rel="icon" href="/favicon.ico" />
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -106,17 +89,8 @@ export default function Home () {
           <link href="assets/css/footer.css" rel="stylesheet"></link>
 
           {/* font awesome */}
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-          />
-          <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-            rel="stylesheet"
-          ></link>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"></link>
         </Head>
         {loading ? (
           <div
@@ -128,9 +102,7 @@ export default function Home () {
               alignItems: "center",
             }}
           >
-            <h1 style={{ textAlign: "center", verticalAlign: "center" }}>
-              loading
-            </h1>
+            <h1 style={{ textAlign: "center", verticalAlign: "center" }}>loading</h1>
           </div>
         ) : (
           <main>
@@ -140,11 +112,7 @@ export default function Home () {
               </section>
             )}
 
-            <header
-              className="header-area header-sticky wow slideInDown"
-              data-wow-duration="0.75s"
-              data-wow-delay="0s"
-            >
+            <header className="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
               <div className="container">
                 <div className="row">
                   <div className="col-12">
@@ -161,36 +129,13 @@ export default function Home () {
                         <div className="nav-links">
                           <a href="#about">About Doctor</a>
                           <a href="#education">Education</a>
-                          {allData &&
-                            Array.isArray(allData?.Experiences) &&
-                            allData?.Experiences?.length > 0 && (
-                              <a href="#experience">Experiences</a>
-                            )}
-                          {allData &&
-                            Array.isArray(allData?.Chambers) &&
-                            allData?.Chambers?.length > 0 && (
-                              <a href="#chamber">Chamber</a>
-                            )}
-                          {allData &&
-                            Array.isArray(allData?.SubSpeciality) &&
-                            allData?.SubSpeciality?.length > 0 && (
-                              <a href="#speciality">Speciality & Services</a>
-                            )}
-                          {allData &&
-                            Array.isArray(allData?.Photos) &&
-                            allData?.Photos?.length > 0 && (
-                              <a href="#gallery">Gallery</a>
-                            )}
-                          {allData &&
-                            Array.isArray(allData?.VideoLinks) &&
-                            allData?.VideoLinks?.length > 0 && (
-                              <a href="#video-gallery">Video Gallery</a>
-                            )}
-                          {allData &&
-                            Array.isArray(allData?.BlogFeeds) &&
-                            allData?.BlogFeeds?.length > 0 && (
-                              <a href="feeds/#blog-feeds">Blog Feeds</a>
-                            )}
+                          {allData && Array.isArray(allData?.Experiences) && allData?.Experiences?.length > 0 && <a href="#experience">Experiences</a>}
+                          {allData && Array.isArray(allData?.Chambers) && allData?.Chambers?.length > 0 && <a href="#chamber">Chamber</a>}
+                          {allData && Array.isArray(allData?.SubSpeciality) && allData?.SubSpeciality?.length > 0 && <a href="#speciality">Speciality & Services</a>}
+
+                          {allData && Array.isArray(allData?.Photos) && allData?.Photos?.length > 0 && <a href="#gallery">Gallery</a>}
+                          {allData && Array.isArray(allData?.VideoLinks) && allData?.VideoLinks?.length > 0 && <a href="#video-gallery">Video Gallery</a>}
+                          {allData && Array.isArray(allData?.BlogFeeds) && allData?.BlogFeeds?.length > 0 && <a href="feeds/#blog-feeds">Blog Feeds</a>}
                           <a href="#contact">Contact Us</a>
                         </div>
                       </div>
@@ -200,13 +145,7 @@ export default function Home () {
               </div>
             </header>
 
-            <div
-              data-bs-spy="scroll"
-              data-bs-target="#navbar-example2"
-              data-bs-offset="0"
-              class="scrollspy-example"
-              tabindex="0"
-            >
+            <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
               <section id="about" className="about-video">
                 {allData?.Bio && <AboutUs data={allData} />}
               </section>
@@ -217,45 +156,34 @@ export default function Home () {
               )}
               {allData && (
                 <section id="education" className="">
-                  <EducationAndTarining
-                    educations={allData?.Educations}
-                    trainings={allData?.Trainings}
-                    researchs={allData?.Researchs}
-                  />
+                  <EducationAndTarining educations={allData?.Educations} trainings={allData?.Trainings} researchs={allData?.Researchs} />
                 </section>
               )}
-              {Array.isArray(allData?.Experiences) &&
-                allData?.Experiences?.length > 0 && (
-                  <section id="experience" className="experience">
-                    <Experience data={allData} />
-                  </section>
-                )}
-              {allData &&
-                Array.isArray(allData?.Chambers) &&
-                allData?.Chambers?.length > 0 && (
-                  <section id="chamber" className="chamber">
-                    <Chamber data={allData} />
-                  </section>
-                )}
+              {Array.isArray(allData?.Experiences) && allData?.Experiences?.length > 0 && (
+                <section id="experience" className="experience">
+                  <Experience data={allData} />
+                </section>
+              )}
+              {allData && Array.isArray(allData?.Chambers) && allData?.Chambers?.length > 0 && (
+                <section id="chamber" className="chamber">
+                  <Chamber data={allData} />
+                </section>
+              )}
               {allData && (
                 <section id="speciality" className="speciality">
                   <Speciality data={allData} />
                 </section>
               )}
-              {allData &&
-                Array.isArray(allData?.Photos) &&
-                allData?.Photos?.length > 0 && (
-                  <section id="gallery" className="gallery">
-                    <Gallery data={allData} />
-                  </section>
-                )}
-              {allData &&
-                Array.isArray(allData?.VideoLinks) &&
-                allData?.VideoLinks?.length > 0 && (
-                  <section id="video-gallery" className="video-gallery">
-                    <VideoGallery data={allData} />
-                  </section>
-                )}
+              {allData && Array.isArray(allData?.Photos) && allData?.Photos?.length > 0 && (
+                <section id="gallery" className="gallery">
+                  <Gallery data={allData} />
+                </section>
+              )}
+              {allData && Array.isArray(allData?.VideoLinks) && allData?.VideoLinks?.length > 0 && (
+                <section id="video-gallery" className="video-gallery">
+                  <VideoGallery data={allData} />
+                </section>
+              )}
               <section id="contact-us" className="contact-us">
                 <ContactUs data={allData} />
               </section>
@@ -296,36 +224,20 @@ export default function Home () {
       </button>
       {/* ---------------------------------------- */}
       {/* Modal */}
-      <div
-        className="modal fade"
-        id="exampleModalCenter"
-        tabIndex={-1}
-        role="dialog"
-        aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true"
-      >
+      <div className="modal fade" id="exampleModalCenter" tabIndex={-1} role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered" role="document">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLongTitle">
                 Modal title
               </h5>
-              <button
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
+              <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">×</span>
               </button>
             </div>
             <div className="modal-body">...</div>
             <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-dismiss="modal"
-              >
+              <button type="button" className="btn btn-secondary" data-dismiss="modal">
                 Close
               </button>
               <button type="button" className="btn btn-primary">

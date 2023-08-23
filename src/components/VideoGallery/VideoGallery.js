@@ -34,10 +34,8 @@ const VideoGallery = ({ data }) => {
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
     const match = url.match(regExp);
 
-    return (match && match[2].length === 11)
-      ? match[2]
-      : null;
-}
+    return match && match[2].length === 11 ? match[2] : null;
+  }
 
   return (
     <div className="container">
@@ -48,24 +46,10 @@ const VideoGallery = ({ data }) => {
             {Array.isArray(data?.VideoLinks) &&
               data?.VideoLinks?.length > 0 &&
               data?.VideoLinks?.map((item) => {
-                const videoUrl = `https://www.youtube.com/embed/${getYoutubeVideoID(
-                  item?.value
-                )}/0.jpg?mode=opaque&amp;rel=0&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent`;
+                const videoUrl = `https://www.youtube.com/embed/${getYoutubeVideoID(item?.value)}/0.jpg?mode=opaque&amp;rel=0&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent`;
                 return (
-                  <div
-                    style={{ width: "100%", height: "100%", padding: "1rem" }}
-                  >
-                    <iframe
-                      width="100%"
-                      height="315"
-                      // src={`${item?.value}`}
-                      src={videoUrl}
-                      title="YouTube video player"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen="allowfullscreen"
-                      class="aspect-video h-full w-full rounded-lg shadow-lg"
-                    ></iframe>
+                  <div style={{ width: "100%", height: "100%", padding: "1rem" }}>
+                    <iframe width="100%" height="315" src={videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" class="aspect-video h-full w-full rounded-lg shadow-lg"></iframe>
                   </div>
                 );
               })}
